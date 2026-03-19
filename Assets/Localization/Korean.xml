@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Korean" nowhitespace="false" translatedname="한국어">
+	<Override>
+		<workshop.contenttag.outpost>전초기지</workshop.contenttag.outpost>
+		<workshop.contenttag.beaconstation>비콘 스테이션</workshop.contenttag.beaconstation>
+		<workshop.contenttag.wreck>난파선</workshop.contenttag.wreck>
+		<workshop.contenttag.ruin>유적</workshop.contenttag.ruin>
+		<workshop.contenttag.weapons>무기</workshop.contenttag.weapons>
+		<workshop.contenttag.equipment>장비</workshop.contenttag.equipment>
+		<workshop.contenttag.medical>의료</workshop.contenttag.medical>
+		<workshop.contenttag.gameplaymechanics>게임플레이 메카닉</workshop.contenttag.gameplaymechanics>
+		<workshop.contenttag.qol>편의성</workshop.contenttag.qol>
+		<workshop.contenttag.clientside>클라이언트 사이드</workshop.contenttag.clientside>
+		<workshop.contenttag.serverside>서버 사이드</workshop.contenttag.serverside>
+		<workshop.contenttag.outdated>구식</workshop.contenttag.outdated>
+		<workshop.contenttag.gamemode>게임 모드</workshop.contenttag.gamemode>
+		<workshop.contenttag.library>라이브러리</workshop.contenttag.library>
+		<workshop.contenttag.moddertool>모드 도구</workshop.contenttag.moddertool>
+		<workshop.contenttag.misc>기타</workshop.contenttag.misc>
+	</Override>
+</infotexts>

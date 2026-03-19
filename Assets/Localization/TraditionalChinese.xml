@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Traditional Chinese" nowhitespace="true" translatedname="中文(繁體)">
+	<Override>
+		<workshop.contenttag.outpost>前哨站</workshop.contenttag.outpost>
+		<workshop.contenttag.beaconstation>信標站</workshop.contenttag.beaconstation>
+		<workshop.contenttag.wreck>沉船</workshop.contenttag.wreck>
+		<workshop.contenttag.ruin>遺蹟</workshop.contenttag.ruin>
+		<workshop.contenttag.weapons>武器</workshop.contenttag.weapons>
+		<workshop.contenttag.equipment>裝備</workshop.contenttag.equipment>
+		<workshop.contenttag.medical>醫療</workshop.contenttag.medical>
+		<workshop.contenttag.gameplaymechanics>遊戲機制</workshop.contenttag.gameplaymechanics>
+		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
+		<workshop.contenttag.clientside>客戶端</workshop.contenttag.clientside>
+		<workshop.contenttag.serverside>伺服器端</workshop.contenttag.serverside>
+		<workshop.contenttag.outdated>過期</workshop.contenttag.outdated>
+		<workshop.contenttag.gamemode>遊戲模式</workshop.contenttag.gamemode>
+		<workshop.contenttag.library>庫</workshop.contenttag.library>
+		<workshop.contenttag.moddertool>模組工具</workshop.contenttag.moddertool>
+		<workshop.contenttag.misc>雜項</workshop.contenttag.misc>
+	</Override>
+</infotexts>

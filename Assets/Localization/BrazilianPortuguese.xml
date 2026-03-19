@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Brazilian Portuguese" nowhitespace="false" translatedname="Português brasileiro">
+	<Override>
+		<workshop.contenttag.outpost>Posto avançado</workshop.contenttag.outpost>
+		<workshop.contenttag.beaconstation>Estação de baliza</workshop.contenttag.beaconstation>
+		<workshop.contenttag.wreck>Naufrágio</workshop.contenttag.wreck>
+		<workshop.contenttag.ruin>Ruína</workshop.contenttag.ruin>
+		<workshop.contenttag.weapons>Armas</workshop.contenttag.weapons>
+		<workshop.contenttag.equipment>Equipamento</workshop.contenttag.equipment>
+		<workshop.contenttag.medical>Médico</workshop.contenttag.medical>
+		<workshop.contenttag.gameplaymechanics>Mecânicas de jogo</workshop.contenttag.gameplaymechanics>
+		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
+		<workshop.contenttag.clientside>Lado do cliente</workshop.contenttag.clientside>
+		<workshop.contenttag.serverside>Lado do servidor</workshop.contenttag.serverside>
+		<workshop.contenttag.outdated>Obsoleto</workshop.contenttag.outdated>
+		<workshop.contenttag.gamemode>Modo de jogo</workshop.contenttag.gamemode>
+		<workshop.contenttag.library>Biblioteca</workshop.contenttag.library>
+		<workshop.contenttag.moddertool>Ferramenta de modding</workshop.contenttag.moddertool>
+		<workshop.contenttag.misc>Miscelâneo</workshop.contenttag.misc>
+	</Override>
+</infotexts>

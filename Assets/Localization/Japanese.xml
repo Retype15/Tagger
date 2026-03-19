@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Japanese" nowhitespace="false" translatedname="日本語">
+	<Override>
+		<workshop.contenttag.outpost>拠点</workshop.contenttag.outpost>
+		<workshop.contenttag.beaconstation>ビーコンステーション</workshop.contenttag.beaconstation>
+		<workshop.contenttag.wreck>難破船</workshop.contenttag.wreck>
+		<workshop.contenttag.ruin>遺跡</workshop.contenttag.ruin>
+		<workshop.contenttag.weapons>武器</workshop.contenttag.weapons>
+		<workshop.contenttag.equipment>装備</workshop.contenttag.equipment>
+		<workshop.contenttag.medical>医療</workshop.contenttag.medical>
+		<workshop.contenttag.gameplaymechanics>ゲームプレイメカニクス</workshop.contenttag.gameplaymechanics>
+		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
+		<workshop.contenttag.clientside>クライアントサイド</workshop.contenttag.clientside>
+		<workshop.contenttag.serverside>サーバーサイド</workshop.contenttag.serverside>
+		<workshop.contenttag.outdated>旧式</workshop.contenttag.outdated>
+		<workshop.contenttag.gamemode>ゲームモード</workshop.contenttag.gamemode>
+		<workshop.contenttag.library>ライブラリ</workshop.contenttag.library>
+		<workshop.contenttag.moddertool>Moddingツール</workshop.contenttag.moddertool>
+		<workshop.contenttag.misc>その他</workshop.contenttag.misc>
+	</Override>
+</infotexts>

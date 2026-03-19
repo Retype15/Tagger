@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Turkish" nowhitespace="false" translatedname="Türkçe">
+	<Override>
+		<workshop.contenttag.outpost>İstasyon</workshop.contenttag.outpost>
+		<workshop.contenttag.beaconstation>Fener İstasyonu</workshop.contenttag.beaconstation>
+		<workshop.contenttag.wreck>Batık</workshop.contenttag.wreck>
+		<workshop.contenttag.ruin>Ruin</workshop.contenttag.ruin>
+		<workshop.contenttag.weapons>Silahlar</workshop.contenttag.weapons>
+		<workshop.contenttag.equipment>Ekipman</workshop.contenttag.equipment>
+		<workshop.contenttag.medical>Tıbbi</workshop.contenttag.medical>
+		<workshop.contenttag.gameplaymechanics>Oynanış Mekanikleri</workshop.contenttag.gameplaymechanics>
+		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
+		<workshop.contenttag.clientside>İstemci Tarafı</workshop.contenttag.clientside>
+		<workshop.contenttag.serverside>Sunucu Tarafı</workshop.contenttag.serverside>
+		<workshop.contenttag.outdated>Eski</workshop.contenttag.outdated>
+		<workshop.contenttag.gamemode>Oyun Modu</workshop.contenttag.gamemode>
+		<workshop.contenttag.library>Kütüphane</workshop.contenttag.library>
+		<workshop.contenttag.moddertool>Modder Aracı</workshop.contenttag.moddertool>
+		<workshop.contenttag.misc>Çeşitli</workshop.contenttag.misc>
+	</Override>
+</infotexts>

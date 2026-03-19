@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+	<Override>
+		<workshop.contenttag.outpost>Аванпост</workshop.contenttag.outpost>
+		<workshop.contenttag.beaconstation>Маяк</workshop.contenttag.beaconstation>
+		<workshop.contenttag.wreck>Обломки</workshop.contenttag.wreck>
+		<workshop.contenttag.ruin>Руины</workshop.contenttag.ruin>
+		<workshop.contenttag.weapons>Оружие</workshop.contenttag.weapons>
+		<workshop.contenttag.equipment>Снаряжение</workshop.contenttag.equipment>
+		<workshop.contenttag.medical>Медицина</workshop.contenttag.medical>
+		<workshop.contenttag.gameplaymechanics>Игровые механики</workshop.contenttag.gameplaymechanics>
+		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
+		<workshop.contenttag.clientside>Клиентская сторона</workshop.contenttag.clientside>
+		<workshop.contenttag.serverside>Серверная сторона</workshop.contenttag.serverside>
+		<workshop.contenttag.outdated>Устаревшие</workshop.contenttag.outdated>
+		<workshop.contenttag.gamemode>Игровой режим</workshop.contenttag.gamemode>
+		<workshop.contenttag.library>Библиотека</workshop.contenttag.library>
+		<workshop.contenttag.moddertool>Инструмент для моддеров</workshop.contenttag.moddertool>
+		<workshop.contenttag.misc>Разное</workshop.contenttag.misc>
+	</Override>
+</infotexts>
