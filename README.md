@@ -18,7 +18,7 @@ It adds the following categories to the Workshop tags menu:
 
 **How ​​to Use**: Before navigating to the Workshop publishing section, ensure that you have loaded into a game session at least once (whether in a standard game, on a server, or even in the Submarine Editor). Once you have done this, exit that session, and the new tags will become available to you. Remember to repeat this process every time you launch the game. ---
 
-## 🌏 Localization
+## Localization
 
 This project features full support for the following languages:
 
@@ -38,8 +38,9 @@ This project features full support for the following languages:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **GNU GPLv3**. Please refer to the [`LICENCE`](./LICENCE) file for more details.
 
+GitHub Project: [Tagger](https://github.com/Retype15/Tagger)
 Developer: [Retype15](https://github.com/Retype15)
