@@ -39,8 +39,8 @@ namespace Tagger
             "medical",
             "gameplay mechanics",
             "qol",
-            "client side",
-            "server side",
+            "client-side",
+            "server-side",
             "outdated",
             "game mode",
             "library",
@@ -60,11 +60,21 @@ namespace Tagger
             __result.Content.ClampMouseRectToParent = true;
 
             var existingTags = __result.Content.Children
-                .Select(c => c.UserData is Identifier id ? id : Identifier.Empty)
+                .Select(c =>
+                {
+                    if (c.UserData is Identifier id)
+                    {
+                        if (id == "serverside" || id == "server side") return "server-side".ToIdentifier();
+                        if (id == "clientside" || id == "client side") return "client-side".ToIdentifier();
+                        return id;
+                    }
+                    return Identifier.Empty;
+                })
                 .Where(id => id != Identifier.Empty)
                 .ToHashSet();
 
             int injectedCount = 0;
+
 
             foreach (var tag in CustomTags)
             {

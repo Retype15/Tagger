@@ -10,8 +10,8 @@
 		<workshop.contenttag.medical>醫療</workshop.contenttag.medical>
 		<workshop.contenttag.gameplaymechanics>遊戲機制</workshop.contenttag.gameplaymechanics>
 		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
-		<workshop.contenttag.clientside>客戶端</workshop.contenttag.clientside>
-		<workshop.contenttag.serverside>伺服器端</workshop.contenttag.serverside>
+		<workshop.contenttag.client-side>客戶端</workshop.contenttag.client-side>
+		<workshop.contenttag.server-side>伺服器端</workshop.contenttag.server-side>
 		<workshop.contenttag.outdated>過期</workshop.contenttag.outdated>
 		<workshop.contenttag.gamemode>遊戲模式</workshop.contenttag.gamemode>
 		<workshop.contenttag.library>庫</workshop.contenttag.library>

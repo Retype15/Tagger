@@ -10,8 +10,8 @@
 		<workshop.contenttag.medical>Médical</workshop.contenttag.medical>
 		<workshop.contenttag.gameplaymechanics>Mécaniques de jeu</workshop.contenttag.gameplaymechanics>
 		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
-		<workshop.contenttag.clientside>Côté client</workshop.contenttag.clientside>
-		<workshop.contenttag.serverside>Côté serveur</workshop.contenttag.serverside>
+		<workshop.contenttag.client-side>Côté client</workshop.contenttag.client-side>
+		<workshop.contenttag.server-side>Côté serveur</workshop.contenttag.server-side>
 		<workshop.contenttag.outdated>Obsolete</workshop.contenttag.outdated>
 		<workshop.contenttag.gamemode>Mode de jeu</workshop.contenttag.gamemode>
 		<workshop.contenttag.library>Bibliothèque</workshop.contenttag.library>

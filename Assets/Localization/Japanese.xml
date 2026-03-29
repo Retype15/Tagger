@@ -10,8 +10,8 @@
 		<workshop.contenttag.medical>医療</workshop.contenttag.medical>
 		<workshop.contenttag.gameplaymechanics>ゲームプレイメカニクス</workshop.contenttag.gameplaymechanics>
 		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
-		<workshop.contenttag.clientside>クライアントサイド</workshop.contenttag.clientside>
-		<workshop.contenttag.serverside>サーバーサイド</workshop.contenttag.serverside>
+		<workshop.contenttag.client-side>クライアントサイド</workshop.contenttag.client-side>
+		<workshop.contenttag.server-side>サーバーサイド</workshop.contenttag.server-side>
 		<workshop.contenttag.outdated>旧式</workshop.contenttag.outdated>
 		<workshop.contenttag.gamemode>ゲームモード</workshop.contenttag.gamemode>
 		<workshop.contenttag.library>ライブラリ</workshop.contenttag.library>

@@ -10,8 +10,8 @@
 		<workshop.contenttag.medical>의료</workshop.contenttag.medical>
 		<workshop.contenttag.gameplaymechanics>게임플레이 메카닉</workshop.contenttag.gameplaymechanics>
 		<workshop.contenttag.qol>편의성</workshop.contenttag.qol>
-		<workshop.contenttag.clientside>클라이언트 사이드</workshop.contenttag.clientside>
-		<workshop.contenttag.serverside>서버 사이드</workshop.contenttag.serverside>
+		<workshop.contenttag.client-side>클라이언트 사이드</workshop.contenttag.client-side>
+		<workshop.contenttag.server-side>서버 사이드</workshop.contenttag.server-side>
 		<workshop.contenttag.outdated>구식</workshop.contenttag.outdated>
 		<workshop.contenttag.gamemode>게임 모드</workshop.contenttag.gamemode>
 		<workshop.contenttag.library>라이브러리</workshop.contenttag.library>
