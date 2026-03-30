@@ -7,6 +7,7 @@
 #pragma warning disable IDE0290
 
 using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 using Barotrauma;
 using Barotrauma.Steam;
 using HarmonyLib;
@@ -15,21 +16,11 @@ using Microsoft.Xna.Framework;
 namespace Tagger
 {
     [HarmonyPatch(typeof(MutableWorkshopMenu))]
-    public static class TaggerPatches
+    public static partial class TaggerPatches
     {
-        public static readonly ImmutableArray<Identifier> CustomTags = [.. new[]
+        // MARK: Steam Hidden Tags
+        public static readonly ImmutableArray<Identifier> SteamHiddenTags = [.. new[]
         {
-            "submarine",
-            "mission",
-            "item",
-            "item assembly",
-            "monster",
-            "language",
-            "event set",
-            "total conversion",
-            "art",
-            "environment",
-        // Customs
             "outpost",
             "beacon station",
             "wreck",
@@ -38,74 +29,188 @@ namespace Tagger
             "equipment",
             "medical",
             "gameplay mechanics",
-            "qol",
-            "client-side",
+            "qol", "client-side",
             "server-side",
             "outdated",
             "game mode",
-            "library",
+            "library"
+        }.ToIdentifiers()];
+
+        // MARK: Preset Tags
+        public static readonly ImmutableArray<Identifier> ImmutableCustomTags = [.. new[]
+        {
             "modder tool",
             "misc"
-            }.ToIdentifiers()];
+        }.ToIdentifiers()];
+
+        // MARK: Harmoy patches
 
         [HarmonyPatch("CreateTagsList")]
         [HarmonyPostfix]
         public static void Postfix_CreateTagsList(GUIListBox __result, bool canBeFocused)
         {
-            if (__result == null || __result.Content == null) return;
+            if (__result?.Content == null) return;
 
             __result.ScrollBarEnabled = true;
             __result.ScrollBarVisible = true;
             __result.HideChildrenOutsideFrame = true;
             __result.Content.ClampMouseRectToParent = true;
 
-            var existingTags = __result.Content.Children
-                .Select(c =>
-                {
-                    if (c.UserData is Identifier id)
-                    {
-                        if (id == "serverside" || id == "server side") return "server-side".ToIdentifier();
-                        if (id == "clientside" || id == "client side") return "client-side".ToIdentifier();
-                        return id;
-                    }
-                    return Identifier.Empty;
-                })
-                .Where(id => id != Identifier.Empty)
-                .ToHashSet();
+            var selectedTags = __result.Content.Children
+                .Where(c => c is GUIButton { Selected: true } && c.UserData is Identifier)
+                .Select(c => (Identifier)c.UserData).ToHashSet();
 
-            int injectedCount = 0;
+            __result.Content.ClearChildren();
+            var processedTags = new HashSet<Identifier>();
 
+            RLogger.LogDebug($"[Tagger] Building tags list. Found {SteamManager.Workshop.Tags.Length} Steam tags.");
 
-            foreach (var tag in CustomTags)
+            foreach (var tag in SteamManager.Workshop.Tags)
             {
-                if (existingTags.Contains(tag)) continue;
-
-                var tagBtn = new GUIButton(
-                    new RectTransform(new Vector2(0.25f, 1.0f / 8.0f), __result.Content.RectTransform, anchor: Anchor.TopLeft),
-                    TextManager.Get($"workshop.contenttag.{tag.Value.RemoveWhitespace()}").Fallback(tag.Value.CapitaliseFirstInvariant()),
-                    style: "GUIButtonRound")
-                {
-                    CanBeFocused = canBeFocused,
-                    Selected = !canBeFocused,
-                    UserData = tag
-                };
-
-                tagBtn.RectTransform.NonScaledSize = tagBtn.Font.MeasureString(tagBtn.Text).ToPoint() + new Point(GUI.IntScale(15), GUI.IntScale(5));
-                tagBtn.RectTransform.IsFixedSize = true;
-                tagBtn.ClampMouseRectToParent = false;
-
-                injectedCount++;
+                var btn = TagBuilder.CreateButton(__result.Content, tag, TagBuilder.GetCategory(tag), canBeFocused);
+                if (selectedTags.Contains(tag)) btn.Selected = true;
+                processedTags.Add(tag);
             }
 
-            if (injectedCount > 0)
+            RLogger.LogDebug($"[Tagger] Injecting {SteamHiddenTags.Length} hidden and {ImmutableCustomTags.Length} preset tags.");
+            InjectCategory(SteamHiddenTags, TagType.Hidden);
+            InjectCategory(ImmutableCustomTags, TagType.Preset);
+
+            var customTags = TaggerDataManager.GetCustomTags();
+            RLogger.LogDebug($"[Tagger] Injecting {customTags.Count} custom user tags.");
+            foreach (var customTag in customTags)
             {
-                __result.UpdateScrollBarSize();
-                __result.BarScroll = 0.0f;
+                if (processedTags.Contains(customTag.Name)) continue;
+                var btn = TagBuilder.CreateButton(__result.Content, customTag.Name, TagType.Custom, canBeFocused, customTag.Description);
+                if (selectedTags.Contains(customTag.Name)) btn.Selected = true;
+                processedTags.Add(customTag.Name);
+            }
 
-                __result.Content.RectTransform.RecalculateChildren(true);
+            if (canBeFocused) { InjectNewPlusButton(__result.Content, canBeFocused); }
 
-                LuaCsLogger.LogMessage($"[Tagger] {injectedCount} tags added.");
+            RLogger.LogDebug($"[Tagger] Total buttons in list: {__result.Content.CountChildren}");
+
+            __result.UpdateScrollBarSize();
+            __result.Content.RectTransform.RecalculateChildren(true);
+
+            void InjectCategory(IEnumerable<Identifier> list, TagType type)
+            {
+                foreach (var id in list)
+                {
+                    if (processedTags.Contains(id)) continue;
+                    var btn = TagBuilder.CreateButton(__result.Content, id, type, canBeFocused);
+                    if (selectedTags.Contains(id)) btn.Selected = true;
+                    processedTags.Add(id);
+                }
             }
         }
+
+        public static void ShowTagContextMenu(GUIComponent parent, GUIButton btn, Identifier id, bool isCustom)
+        {
+            if (isCustom)
+            {
+                GUIContextMenu.CreateContextMenu(
+                    new ContextMenuOption(TextSOS.Get("tagger.button.edit", "Edit").Value, isEnabled: true, onSelected: () => ShowTagEditor(parent, btn, id)),
+                    new ContextMenuOption(TextSOS.Get("tagger.button.delete", "Delete").Value, isEnabled: true, onSelected: () => ShowDeleteConfirmation(parent, btn, id))
+                );
+            }
+            else
+            {
+                GUIContextMenu.CreateContextMenu(
+                    new ContextMenuOption(TextSOS.Get("tagger.button.savetag", "Save Tag").Value, isEnabled: true, onSelected: () => ShowTagEditor(parent, btn, id, isConverting: true))
+                );
+            }
+        }
+
+        private static void ShowDeleteConfirmation(GUIComponent parent, GUIButton tagBtn, Identifier tag)
+        {
+            var msgBox = new GUIMessageBox(
+                TextManager.Get("Delete"),
+                TextManager.GetWithVariable("WorkshopItemDeleteVerification", "[itemname]", tagBtn.Text),
+                [TextManager.Get("Yes"), TextManager.Get("No")]);
+
+            msgBox.Buttons[0].OnClicked = (yesBtn, _) =>
+            {
+                TaggerDataManager.RemoveCustomTag(tag);
+                parent.RemoveChild(tagBtn);
+                parent.RectTransform.RecalculateChildren(true);
+                msgBox.Close();
+                return true;
+            };
+            msgBox.Buttons[1].OnClicked = (_, _) => { msgBox.Close(); return true; };
+        }
+
+        private static void ShowTagEditor(GUIComponent parent, GUIButton? tagBtn, Identifier? oldTag = null, bool isConverting = false)
+        {
+            bool isEditing = oldTag != null && tagBtn != null && !isConverting;
+            var header = isEditing ? TextSOS.Get("tagger.header.edit", "Edit Tag") : (isConverting ? TextSOS.Get("tagger.header.convert", "Add to Custom") : TextSOS.Get("tagger.header.newtag", "New Custom Tag"));
+
+            var msgBox = new GUIMessageBox(header.Value, string.Empty, buttons: [TextManager.Get("ok"), TextManager.Get("cancel")], relativeSize: new Vector2(0.3f, 0.5f));
+            var mainLayout = new GUILayoutGroup(new RectTransform(new Vector2(0.95f, 0.75f), msgBox.Content.RectTransform, Anchor.TopCenter)) { Stretch = true, RelativeSpacing = 0.02f };
+
+            _ = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.05f), mainLayout.RectTransform), TextSOS.Get("tagger.label.name", "TAG NAME").Value, font: GUIStyle.SubHeadingFont);
+            var nameBox = new GUITextBox(new RectTransform(new Vector2(1.0f, 0.15f), mainLayout.RectTransform),
+                text: (isEditing || isConverting) ? oldTag!.Value.Value : "")
+            { MaxTextLength = 25 };
+
+            _ = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.05f), mainLayout.RectTransform), TextSOS.Get("tagger.label.description", "DESCRIPTION").Value, font: GUIStyle.SubHeadingFont);
+            string currentDesc = isEditing ? (TaggerDataManager.GetCustomTags().FirstOrDefault(t => t.Name == oldTag)?.Description ?? "") : "";
+            var descBox = TaggerMenu.ScrollableTextBox(mainLayout, 6.0f, currentDesc);
+
+            msgBox.Buttons[0].OnClicked = (okBtn, _) =>
+            {
+                var newNameStr = nameBox.Text.Trim().ToLowerInvariant();
+                if (string.IsNullOrWhiteSpace(newNameStr)) { nameBox.Flash(GUIStyle.Red); return false; }
+
+                if (!CheckText().IsMatch(input: newNameStr))
+                {
+                    nameBox.Flash(GUIStyle.Red);
+                    GUI.AddMessage(TextSOS.Get("tagger.error.invalidtagname", "Invalid tag name. Only letters, numbers, spaces, and underscores are allowed.").Value, Color.Red, 10.0f);
+                    return false;
+                }
+
+                var newName = newNameStr.ToIdentifier();
+                var newDesc = descBox.Text.Trim();
+
+                RLogger.LogDebug($"[Tagger] Confirming Save/Update: {newName} (Converted: {isConverting})");
+                if (isEditing) { TaggerDataManager.RemoveCustomTag(oldTag!.Value); }
+                TaggerDataManager.SaveCustomTag(new CustomTag(newName, newDesc));
+
+                if (isEditing || isConverting)
+                {
+                    if (tagBtn != null) parent.RemoveChild(tagBtn);
+                }
+
+                var nbtn = TagBuilder.CreateButton(parent, newName, TagType.Custom, canFocus: true, newDesc);
+                nbtn.Selected = true;
+
+                var plusBtn = parent.Children.FirstOrDefault(c => c.UserData is Identifier id && id == "tagger_add_btn_placeholder");
+                plusBtn?.RectTransform.SetAsLastChild();
+
+                RLogger.LogDebug($"[Tagger] Tag list UI updated.");
+                parent.RectTransform.RecalculateChildren(true);
+                parent.ForceLayoutRecalculation();
+                msgBox.Close();
+                return true;
+            };
+            msgBox.Buttons[1].OnClicked = (_, _) => { msgBox.Close(); return true; };
+            nameBox.Select();
+        }
+
+        private static void InjectNewPlusButton(GUIComponent parent, bool canBeFocused)
+        {
+            var plusBtn = new GUIButton(new RectTransform(new Vector2(0.25f, 1.0f / 8.0f), parent.RectTransform), TextSOS.Get("tagger.button.newplus", "New +").Value, style: "GUIButtonRound")
+            {
+                CanBeFocused = canBeFocused,
+                UserData = "tagger_add_btn_placeholder".ToIdentifier()
+            };
+            TagBuilder.ApplyStyle(plusBtn, TagType.NewPlus, TextSOS.Get("tagger.tooltip.addnew", "Click to create a new custom user tag.").Value);
+            plusBtn.RectTransform.NonScaledSize = plusBtn.Font.MeasureString(plusBtn.Text).ToPoint() + new Point(GUI.IntScale(20), GUI.IntScale(5));
+            plusBtn.RectTransform.IsFixedSize = true;
+            plusBtn.OnClicked = (_, _) => { ShowTagEditor(parent, null, null); return true; };
+        }
+
+        [GeneratedRegex(@"^[a-zA-Z0-9_ ]+$")]
+        private static partial Regex CheckText();
     }
 }

@@ -7,8 +7,10 @@
 #pragma warning disable IDE0290
 
 using Barotrauma;
-
 using System.Runtime.CompilerServices;
+using System.Diagnostics;
+using Microsoft.Xna.Framework;
+
 [assembly: IgnoresAccessChecksTo("Barotrauma")]
 [assembly: IgnoresAccessChecksTo("DedicatedServer")]
 [assembly: IgnoresAccessChecksTo("BarotraumaCore")]
@@ -20,21 +22,19 @@ namespace Tagger
         public void Initialize()
         {
 #if CLIENT
-                InitClient();
+            InitClient();
 #endif
         }
 
         public void OnLoadCompleted()
         {
-#if DEBUG
-            LuaCsLogger.LogMessage(TextSOS.Get("tagger.shared.loaded", "[Tagger] Loaded Successfully.").Value);
-            LuaCsLogger.LogMessage(TextSOS.Get("tagger.shared.debugmode", "[Tagger] Debug Mode is enabled.").Value);
-#endif
+            RLogger.LogDebug("[Tagger] Loaded Successfully.");
+            RLogger.LogDebug("[Tagger] Debug Mode is enabled.");
         }
 
-        public void PreInitPatching() 
-        { 
-            LuaCsLogger.LogMessage(TextSOS.Get("tagger.shared.preinit", "[Tagger] Pre-Initialization phase started.").Value);
+        public void PreInitPatching()
+        {
+            RLogger.LogDebug("[Tagger] Pre-Initialization phase started.");
         }
 
         public void Dispose()
@@ -42,9 +42,7 @@ namespace Tagger
 #if CLIENT
             DisposeClient();
 #endif
-#if DEBUG
-            LuaCsLogger.LogMessage(TextSOS.Get("tagger.shared.unloaded", "[Tagger] Mod Unloaded.").Value);
-#endif
+            RLogger.LogDebug("[Tagger] Mod Unloaded.");
             GC.SuppressFinalize(this);
         }
     }
@@ -65,5 +63,26 @@ namespace Tagger
             }
             return text;
         }
+    }
+
+    public static class RLogger
+    {
+        [Conditional("DEBUG")]
+        public static void LogDebug(LocalizedString message, Color? serverColor = null, Color? clientColor = null) => LuaCsLogger.LogMessage(message.Value, serverColor, clientColor);
+
+        [Conditional("RELEASE")]
+        public static void LogRelease(LocalizedString message, Color? serverColor = null, Color? clientColor = null) => LuaCsLogger.LogMessage(message.Value, serverColor, clientColor);
+
+        public static void Log(LocalizedString message, Color? serverColor = null, Color? clientColor = null) => LuaCsLogger.LogMessage(message.Value, serverColor, clientColor);
+
+        public static void Error(string message) => LuaCsLogger.LogError(message);
+
+        public static void Error(string message, LuaCsMessageOrigin origin) => LuaCsLogger.LogError(message, origin);
+
+        [Conditional("DEBUG")]
+        public static void DebugError(string message) => LuaCsLogger.LogError(message);
+
+        [Conditional("DEBUG")]
+        public static void DebugError(string message, LuaCsMessageOrigin origin) => LuaCsLogger.LogError(message, origin);
     }
 }

@@ -1,21 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Traditional Chinese" nowhitespace="true" translatedname="中文(繁體)">
 	<Override>
-		<workshop.contenttag.outpost>前哨站</workshop.contenttag.outpost>
-		<workshop.contenttag.beaconstation>信標站</workshop.contenttag.beaconstation>
-		<workshop.contenttag.wreck>沉船</workshop.contenttag.wreck>
-		<workshop.contenttag.ruin>遺蹟</workshop.contenttag.ruin>
-		<workshop.contenttag.weapons>武器</workshop.contenttag.weapons>
-		<workshop.contenttag.equipment>裝備</workshop.contenttag.equipment>
-		<workshop.contenttag.medical>醫療</workshop.contenttag.medical>
-		<workshop.contenttag.gameplaymechanics>遊戲機制</workshop.contenttag.gameplaymechanics>
-		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
-		<workshop.contenttag.client-side>客戶端</workshop.contenttag.client-side>
-		<workshop.contenttag.server-side>伺服器端</workshop.contenttag.server-side>
-		<workshop.contenttag.outdated>過期</workshop.contenttag.outdated>
-		<workshop.contenttag.gamemode>遊戲模式</workshop.contenttag.gamemode>
-		<workshop.contenttag.library>庫</workshop.contenttag.library>
-		<workshop.contenttag.moddertool>模組工具</workshop.contenttag.moddertool>
-		<workshop.contenttag.misc>雜項</workshop.contenttag.misc>
+		<!-- MARK: Statics -->
+
+		<tagger.title.vanilla>官方 Steam 工作坊標籤</tagger.title.vanilla>
+		<tagger.title.hidden>隱藏的 Steam 工作坊標籤</tagger.title.hidden>
+		<tagger.title.preset>自定義預設標籤</tagger.title.preset>
+		<tagger.title.unrecognized>未識別的 Steam 標籤。 \n標籤未保存在自定義列表中，右鍵點擊以保存。</tagger.title.unrecognized>
+		<tagger.title.custom>自定義標籤。右鍵點擊以編輯/刪除。</tagger.title.custom>
+		<tagger.title.newplus>新建自定義標籤</tagger.title.newplus>
+		
+		<tagger.button.edit>編輯</tagger.button.edit>
+		<tagger.button.delete>刪除</tagger.button.delete>
+		<tagger.header.edit>編輯標籤</tagger.header.edit>
+		<tagger.label.name>標籤名稱</tagger.label.name>
+		<tagger.label.description>描述</tagger.label.description>
+		<tagger.tooltip.addnew>點擊以創建新的用戶自定義標籤。</tagger.tooltip.addnew>
+		<tagger.button.newplus>新建 +</tagger.button.newplus>
+		<tagger.button.savetag>保存標籤</tagger.button.savetag>
+		<tagger.header.convert>保存標籤到自定義列表</tagger.header.convert>
+
+		<tagger.client.loaded>[Tagger] 補丁已應用。</tagger.client.loaded>
+		<tagger.client.patched>[Tagger] 補丁已存在。</tagger.client.patched>
+		<tagger.error.xmlload>[Tagger] XML 載入錯誤: [error]</tagger.error.xmlload>
+		<tagger.error.xmlsave>[Tagger] XML 保存錯誤: [error]</tagger.error.xmlsave>
+		<tagger.error.critical>[Tagger] 應用補丁時發生致命錯誤: [error]</tagger.error.critical>
+		<tagger.error.invalidtagname>無效的標籤名稱。僅允許使用字母、數字、空格和下划線。</tagger.error.invalidtagname>
+
+		<!-- MARK: Vanilla Tags -->
+
+		<workshop.tag.submarine>潛艇</workshop.tag.submarine>
+		<tagger.tag.submarine.desc>主要的玩家可控船隻，包含內殼、縫隙、結構、項目和導航路標。</tagger.tag.submarine.desc>
+
+		<workshop.tag.mission>任務</workshop.tag.mission>
+		<tagger.tag.mission.desc>定義往返目標，如回收、暗殺或怪物狩獵，與特定位置類型互動。</tagger.tag.mission.desc>
+
+		<workshop.tag.item>項目</workshop.tag.item>
+		<tagger.tag.item.desc>模組製作的基礎構建塊，由唯一的標識符和組件（如武器、機器或容器）定義。</tagger.tag.item.desc>
+
+		<workshop.tag.itemassembly>項目組件</workshop.tag.itemassembly>
+		<tagger.tag.itemassembly.desc>現有項目和佈線的序列化組合，作為複雜邏輯或模組化房間佈局的預製件。</tagger.tag.itemassembly.desc>
+
+		<workshop.tag.monster>怪物</workshop.tag.monster>
+		<tagger.tag.monster.desc>字符配置文件，定義物種的布娃娃物理、動畫和人工智能行為。</tagger.tag.monster.desc>
+
+		<workshop.tag.language>語言</workshop.tag.language>
+		<tagger.tag.language.desc>本地化數據包，使用 infotexts 根元素覆蓋遊戲文本或添加新語言支持。</tagger.tag.language.desc>
+
+		<workshop.tag.eventset>事件集</workshop.tag.eventset>
+		<tagger.tag.eventset.desc>隨機發生事件的集合，如怪物生成或環境危害，由遊戲的事件管理器管理。</tagger.tag.eventset.desc>
+
+		<workshop.tag.totalconversion>完整轉化</workshop.tag.totalconversion>
+		<tagger.tag.totalconversion.desc>修改核心遊戲包的大型修補程序，重新定義職業、地圖生成參數和基礎系統。</tagger.tag.totalconversion.desc>
+
+		<workshop.tag.art>藝術</workshop.tag.art>
+		<tagger.tag.art.desc>遊戲資產的視覺覆蓋，包括結構、精靈的新紋理以及圖形增強。</tagger.tag.art.desc>
+
+		<workshop.tag.environment>環境</workshop.tag.environment>
+		<tagger.tag.environment.desc>程序生成的關卡對象，包括在環境生成中使用的海底植物、岩石形成和噴口。</tagger.tag.environment.desc>
+
+		<!-- MARK: Vanilla Hidden Tags -->
+
+		<workshop.tag.outpost>前哨站</workshop.tag.outpost>
+		<tagger.tag.outpost.desc>縫合在關卡特定位置的静态模塊，作為平民、軍事或研究中心。</tagger.tag.outpost.desc>
+
+		<workshop.tag.beaconstation>信標站</workshop.tag.beaconstation>
+		<tagger.tag.beaconstation.desc>需要特定內部邏輯（如聲納和電源）才能修復完成的次要目標。</tagger.tag.beaconstation.desc>
+
+		<workshop.tag.wreck>沉船</workshop.tag.wreck>
+		<tagger.tag.wreck.desc>可回收的碎片和沉沒船隻，通常攜帶獨特的生物危害（如丘腦感染）。</tagger.tag.wreck.desc>
+
+		<workshop.tag.ruin>遺蹟</workshop.tag.ruin>
+		<tagger.tag.ruin.desc>古老的異星環境，由獨特的結構、陷阱和分形守護者等實體組成。</tagger.tag.ruin.desc>
+
+		<workshop.tag.weapons>武器</workshop.tag.weapons>
+		<tagger.tag.weapons.desc>項目的子類別，用於標識進攻性工具和武器，以便過濾和商人邏輯整合。</tagger.tag.weapons.desc>
+
+		<workshop.tag.equipment>裝備</workshop.tag.equipment>
+		<tagger.tag.equipment.desc>項目的子類別，代表角色用於各種技術任務的可穿戴工具、裝備和服裝。</tagger.tag.equipment.desc>
+
+		<workshop.tag.medical>醫療</workshop.tag.medical>
+		<tagger.tag.medical.desc>項目的子類別，包括用於治療和處理折磨的藥物、化學品和處理工具。</tagger.tag.medical.desc>
+
+		<workshop.tag.gameplaymechanics>遊戲機制</workshop.tag.gameplaymechanics>
+		<tagger.tag.gameplaymechanics.desc>修改模擬狀態的模組，包括物理、健康折磨和角色技能系統。</tagger.tag.gameplaymechanics.desc>
+
+		<workshop.tag.qol>QOL</workshop.tag.qol>
+		<tagger.tag.qol.desc>優質生活改進，專注於簡化交互或提供信息而不更改核心規則。</tagger.tag.qol.desc>
+
+		<workshop.tag.client-side>客戶端</workshop.tag.client-side>
+		<tagger.tag.client-side.desc>僅安裝在玩家個人電腦上的本地修改，通常包括視覺更改或 UI 增強。</tagger.tag.client-side.desc>
+
+		<workshop.tag.server-side>伺服器端</workshop.tag.server-side>
+		<tagger.tag.server-side.desc>影響服務器行為的邏輯修改模組，通常需要客戶端擁有匹配的內容以進行模擬。</tagger.tag.server-side.desc>
+
+		<workshop.tag.outdated>過期</workshop.tag.outdated>
+		<tagger.tag.outdated.desc>維護指示符，信號表示模組可能導致遊戲當前版本的崩潰或同步錯誤。</tagger.tag.outdated.desc>
+
+		<workshop.tag.gamemode>遊戲模式</workshop.tag.gamemode>
+		<tagger.tag.gamemode.desc>更改往返基本結構的模組，如新的遊戲風格或 PvP 場景。</tagger.tag.gamemode.desc>
+
+		<workshop.tag.library>庫</workshop.tag.library>
+		<tagger.tag.library.desc>基礎資源和框架，例如 Lua 脚本模塊或實用程序庫，供其他模組調用。</tagger.tag.library.desc>
+
+		<!-- MARK: Preset Tags -->
+
+		<workshop.tag.moddertool>模組工具</workshop.tag.moddertool>
+		<tagger.tag.moddertool.desc>專為協助模組創作者創建和測試內容而設計的專業工具和實用程序。</tagger.tag.moddertool.desc>
+
+		<workshop.tag.misc>雜項</workshop.tag.misc>
+		<tagger.tag.misc.desc>不屬於其他特定工作坊類別的雜項內容。</tagger.tag.misc.desc>
+		
 	</Override>
 </infotexts>

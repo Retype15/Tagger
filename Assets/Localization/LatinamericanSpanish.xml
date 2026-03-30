@@ -1,21 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Latinamerican Spanish" nowhitespace="false" translatedname="Español Latinoamericano">
 	<Override>
-		<workshop.contenttag.outpost>Estación</workshop.contenttag.outpost>
-		<workshop.contenttag.beaconstation>Estación de baliza</workshop.contenttag.beaconstation>
-		<workshop.contenttag.wreck>Naufragio</workshop.contenttag.wreck>
-		<workshop.contenttag.ruin>Ruina</workshop.contenttag.ruin>
-		<workshop.contenttag.weapons>Armas</workshop.contenttag.weapons>
-		<workshop.contenttag.equipment>Equipo</workshop.contenttag.equipment>
-		<workshop.contenttag.medical>Médico</workshop.contenttag.medical>
-		<workshop.contenttag.gameplaymechanics>Mecánicas de juego</workshop.contenttag.gameplaymechanics>
-		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
-		<workshop.contenttag.client-side>Lado del cliente</workshop.contenttag.client-side>
-		<workshop.contenttag.server-side>Lado del servidor</workshop.contenttag.server-side>
-		<workshop.contenttag.outdated>Obsoleto</workshop.contenttag.outdated>
-		<workshop.contenttag.gamemode>Modo de juego</workshop.contenttag.gamemode>
-		<workshop.contenttag.library>Biblioteca</workshop.contenttag.library>
-		<workshop.contenttag.moddertool>Herramienta de modding</workshop.contenttag.moddertool>
-		<workshop.contenttag.misc>Misceláneo</workshop.contenttag.misc>
+		<!-- MARK: Statics -->
+
+		<tagger.title.vanilla>Etiqueta oficial de Steam Workshop</tagger.title.vanilla>
+		<tagger.title.hidden>Etiqueta oculta de Steam Workshop</tagger.title.hidden>
+		<tagger.title.preset>Etiqueta de ajuste preestablecido</tagger.title.preset>
+		<tagger.title.unrecognized>Etiqueta de Steam no reconocida. \nEtiqueta no guardada en la lista personalizada, Clic derecho para guardarla.</tagger.title.unrecognized>
+		<tagger.title.custom>Etiqueta personalizada. Clic derecho para editar/eliminar.</tagger.title.custom>
+		<tagger.title.newplus>Agregar nueva etiqueta personalizada</tagger.title.newplus>
+		
+		<tagger.button.edit>Editar</tagger.button.edit>
+		<tagger.button.delete>Eliminar</tagger.button.delete>
+		<tagger.header.edit>Editar etiqueta</tagger.header.edit>
+		<tagger.label.name>NOMBRE DE LA ETIQUETA</tagger.label.name>
+		<tagger.label.description>DESCRIPCIÓN</tagger.label.description>
+		<tagger.tooltip.addnew>Haz clic para crear una nueva etiqueta personalizada.</tagger.tooltip.addnew>
+		<tagger.button.newplus>Nuevo +</tagger.button.newplus>
+		<tagger.button.savetag>Guardar etiqueta</tagger.button.savetag>
+		<tagger.header.convert>Guardar etiqueta en la lista personalizada</tagger.header.convert>
+
+		<tagger.client.loaded>[Tagger] Parches aplicados.</tagger.client.loaded>
+		<tagger.client.patched>[Tagger] Ya está parcheado.</tagger.client.patched>
+		<tagger.error.xmlload>[Tagger] Error al cargar XML: [error]</tagger.error.xmlload>
+		<tagger.error.xmlsave>[Tagger] Error al guardar XML: [error]</tagger.error.xmlsave>
+		<tagger.error.critical>[Tagger] Error crítico al aplicar parches: [error]</tagger.error.critical>
+		<tagger.error.invalidtagname>Nombre de etiqueta no válido. Solo se permiten letras, números, espacios y guiones bajos.</tagger.error.invalidtagname>
+
+		<!-- MARK: Vanilla Tags -->
+
+		<workshop.tag.submarine>Submarino</workshop.tag.submarine>
+		<tagger.tag.submarine.desc>Las principales embarcaciones controlables por el jugador, que contienen cascos, brechas, estructuras, artículos y puntos de ruta para la navegación.</tagger.tag.submarine.desc>
+
+		<workshop.tag.mission>Misión</workshop.tag.mission>
+		<tagger.tag.mission.desc>Define los objetivos de la ronda como salvamento, asesinato o caza de monstruos, interactuando con tipos de ubicación específicos.</tagger.tag.mission.desc>
+
+		<workshop.tag.item>Artículo</workshop.tag.item>
+		<tagger.tag.item.desc>Bloques de construcción fundamentales de los mods, definidos por identificadores únicos y componentes como armas, máquinas o contenedores.</tagger.tag.item.desc>
+
+		<workshop.tag.itemassembly>Ensamblaje de artículos</workshop.tag.itemassembly>
+		<tagger.tag.itemassembly.desc>Grupos serializados de artículos existentes y cableado que sirven como prefabricados para componentes lógicos complejos o diseños de habitaciones modulares.</tagger.tag.itemassembly.desc>
+
+		<workshop.tag.monster>Monstruo</workshop.tag.monster>
+		<tagger.tag.monster.desc>Archivos de configuración de personajes que definen la física de muñeco de trapo (ragdoll), las animaciones y los comportamientos de inteligencia artificial de las especies.</tagger.tag.monster.desc>
+
+		<workshop.tag.language>Idioma</workshop.tag.language>
+		<tagger.tag.language.desc>Paquetes de localización que anulan el texto del juego o añaden soporte para nuevos idiomas utilizando el elemento raíz infotexts.</tagger.tag.language.desc>
+
+		<workshop.tag.eventset>Conjunto de eventos</workshop.tag.eventset>
+		<tagger.tag.eventset.desc>Colecciones de sucesos aleatorios, como apariciones de monstruos o peligros ambientales, gobernados por el gestor de eventos del juego.</tagger.tag.eventset.desc>
+
+		<workshop.tag.totalconversion>Conversión total</workshop.tag.totalconversion>
+		<tagger.tag.totalconversion.desc>Modificaciones agresivas que reemplazan el paquete base del juego para redefinir profesiones, parámetros de generación de mapas y sistemas fundamentales.</tagger.tag.totalconversion.desc>
+
+		<workshop.tag.art>Arte</workshop.tag.art>
+		<tagger.tag.art.desc>Anulaciones visuales para los elementos del juego, incluyendo nuevas texturas para estructuras, sprites y mejoras gráficas.</tagger.tag.art.desc>
+
+		<workshop.tag.environment>Entorno</workshop.tag.environment>
+		<tagger.tag.environment.desc>Objetos de nivel procedurales que incluyen plantas submarinas, formaciones rocosas y chimeneas utilizados en la generación del entorno.</tagger.tag.environment.desc>
+
+		<!-- MARK: Vanilla Hidden Tags -->
+
+		<workshop.tag.outpost>Estación</workshop.tag.outpost>
+		<tagger.tag.outpost.desc>Módulos estáticos integrados en niveles en puntos específicos, que sirven como centros civiles, militares o de investigación.</tagger.tag.outpost.desc>
+
+		<workshop.tag.beaconstation>Estación de baliza</workshop.tag.beaconstation>
+		<tagger.tag.beaconstation.desc>Objetivos secundarios que requieren una lógica interna específica, como sonar y suministro de energía, para ser considerados reparados.</tagger.tag.beaconstation.desc>
+
+		<workshop.tag.wreck>Naufragio</workshop.tag.wreck>
+		<tagger.tag.wreck.desc>Escombros rescatables y barcos hundidos que a menudo albergan peligros biológicos únicos como infestaciones de Thalamus.</tagger.tag.wreck.desc>
+
+		<workshop.tag.ruin>Ruina</workshop.tag.ruin>
+		<tagger.tag.ruin.desc>Entornos alienígenas antiguos que constan de estructuras, trampas y entidades como Guardianes Fractales.</tagger.tag.ruin.desc>
+
+		<workshop.tag.weapons>Armas</workshop.tag.weapons>
+		<tagger.tag.weapons.desc>Subcategoría de artículos utilizada para identificar herramientas ofensivas y armas para el filtrado y la integración de la lógica de comerciantes.</tagger.tag.weapons.desc>
+
+		<workshop.tag.equipment>Equipo</workshop.tag.equipment>
+		<tagger.tag.equipment.desc>Subcategoría de artículos que representa herramientas vestibles, equipo y trajes utilizados por los personajes para diversas tareas.</tagger.tag.equipment.desc>
+
+		<workshop.tag.medical>Médico</workshop.tag.medical>
+		<tagger.tag.medical.desc>Subcategoría de artículos que incluye medicinas, productos químicos y herramientas de tratamiento para la curación y aflicciones.</tagger.tag.medical.desc>
+
+		<workshop.tag.gameplaymechanics>Mecánicas de juego</workshop.tag.gameplaymechanics>
+		<tagger.tag.gameplaymechanics.desc>Modificaciones que alteran el estado de la simulación, incluyendo la física, las aflicciones de salud y los sistemas de habilidades de los personajes.</tagger.tag.gameplaymechanics.desc>
+
+		<workshop.tag.qol>QOL</workshop.tag.qol>
+		<tagger.tag.qol.desc>Mejoras de calidad de vida que se centran en simplificar interacciones o proporcionar información sin cambiar las reglas básicas.</tagger.tag.qol.desc>
+
+		<workshop.tag.client-side>Lado del cliente</workshop.tag.client-side>
+		<tagger.tag.client-side.desc>Modificaciones locales instaladas solo en la máquina del jugador, que suelen incluir cambios visuales o mejoras de la interfaz.</tagger.tag.client-side.desc>
+
+		<workshop.tag.server-side>Lado del servidor</workshop.tag.server-side>
+		<tagger.tag.server-side.desc>Modificaciones que alteran la lógica y afectan al comportamiento del servidor, y que suelen requerir que los clientes tengan contenido coincidente.</tagger.tag.server-side.desc>
+
+		<workshop.tag.outdated>Obsoleto</workshop.tag.outdated>
+		<tagger.tag.outdated.desc>Un indicador de mantenimiento que señala que un mod puede causar fallos o errores de sincronización con la versión actual del juego.</tagger.tag.outdated.desc>
+
+		<workshop.tag.gamemode>Modo de juego</workshop.tag.gamemode>
+		<tagger.tag.gamemode.desc>Modificaciones que cambian la estructura fundamental de una ronda, como nuevos estilos de juego o escenarios PvP.</tagger.tag.gamemode.desc>
+
+		<workshop.tag.library>Biblioteca</workshop.tag.library>
+		<tagger.tag.library.desc>Recursos y marcos de trabajo fundamentales, como módulos de script o bibliotecas de utilidad, utilizados por otros mods.</tagger.tag.library.desc>
+
+		<!-- MARK: Preset Tags -->
+
+		<workshop.tag.moddertool>Herramienta de modding</workshop.tag.moddertool>
+		<tagger.tag.moddertool.desc>Herramientas y utilidades especializadas diseñadas para ayudar a los modders a crear y probar contenido.</tagger.tag.moddertool.desc>
+
+		<workshop.tag.misc>Misceláneo</workshop.tag.misc>
+		<tagger.tag.misc.desc>Contenido misceláneo que no encaja en otras categorías específicas de la Workshop.</tagger.tag.misc.desc>
+		
 	</Override>
 </infotexts>

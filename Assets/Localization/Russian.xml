@@ -1,21 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Russian" nowhitespace="false" translatedname="Русский">
 	<Override>
-		<workshop.contenttag.outpost>Аванпост</workshop.contenttag.outpost>
-		<workshop.contenttag.beaconstation>Маяк</workshop.contenttag.beaconstation>
-		<workshop.contenttag.wreck>Обломки</workshop.contenttag.wreck>
-		<workshop.contenttag.ruin>Руины</workshop.contenttag.ruin>
-		<workshop.contenttag.weapons>Оружие</workshop.contenttag.weapons>
-		<workshop.contenttag.equipment>Снаряжение</workshop.contenttag.equipment>
-		<workshop.contenttag.medical>Медицина</workshop.contenttag.medical>
-		<workshop.contenttag.gameplaymechanics>Игровые механики</workshop.contenttag.gameplaymechanics>
-		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
-		<workshop.contenttag.client-side>Клиентская сторона</workshop.contenttag.client-side>
-		<workshop.contenttag.server-side>Серверная сторона</workshop.contenttag.server-side>
-		<workshop.contenttag.outdated>Устаревшие</workshop.contenttag.outdated>
-		<workshop.contenttag.gamemode>Игровой режим</workshop.contenttag.gamemode>
-		<workshop.contenttag.library>Библиотека</workshop.contenttag.library>
-		<workshop.contenttag.moddertool>Инструмент для моддеров</workshop.contenttag.moddertool>
-		<workshop.contenttag.misc>Разное</workshop.contenttag.misc>
+		<!-- MARK: Statics -->
+
+		<tagger.title.vanilla>Официальный тег Steam Workshop</tagger.title.vanilla>
+		<tagger.title.hidden>Скрытый тег Steam Workshop</tagger.title.hidden>
+		<tagger.title.preset>Пользовательский предустановленный тег</tagger.title.preset>
+		<tagger.title.unrecognized>Нераспознанный тег Steam. \nТег не сохранен в пользовательском списке, нажмите правой кнопкой мыши, чтобы сохранить его.</tagger.title.unrecognized>
+		<tagger.title.custom>Пользовательский тег. Правой кнопкой мыши для редактирования/удаления.</tagger.title.custom>
+		<tagger.title.newplus>Добавить новый пользовательский тег</tagger.title.newplus>
+		
+		<tagger.button.edit>Редактировать</tagger.button.edit>
+		<tagger.button.delete>Удалить</tagger.button.delete>
+		<tagger.header.edit>Редактировать тег</tagger.header.edit>
+		<tagger.label.name>ИМЯ ТЕГА</tagger.label.name>
+		<tagger.label.description>ОПИСАНИЕ</tagger.label.description>
+		<tagger.tooltip.addnew>Нажмите, чтобы создать новый пользовательский тег.</tagger.tooltip.addnew>
+		<tagger.button.newplus>Новый +</tagger.button.newplus>
+		<tagger.button.savetag>Сохранить тег</tagger.button.savetag>
+		<tagger.header.convert>Сохранить тег в пользовательском списке</tagger.header.convert>
+
+		<tagger.client.loaded>[Tagger] Патчи применены.</tagger.client.loaded>
+		<tagger.client.patched>[Tagger] Уже пропатчено.</tagger.client.patched>
+		<tagger.error.xmlload>[Tagger] Ошибка загрузки XML: [error]</tagger.error.xmlload>
+		<tagger.error.xmlsave>[Tagger] Ошибка сохранения XML: [error]</tagger.error.xmlsave>
+		<tagger.error.critical>[Tagger] Критическая ошибка при применении патчей: [error]</tagger.error.critical>
+		<tagger.error.invalidtagname>Недопустимое имя тега. Разрешены только буквы, цифры, пробелы и подчеркивания.</tagger.error.invalidtagname>
+
+		<!-- MARK: Vanilla Tags -->
+
+		<workshop.tag.submarine>Подводная лодка</workshop.tag.submarine>
+		<tagger.tag.submarine.desc>Основные управляемые игроком суда, содержащие корпуса, зазоры, конструкции, предметы и путевые точки для навигации.</tagger.tag.submarine.desc>
+
+		<workshop.tag.mission>Миссия</workshop.tag.mission>
+		<tagger.tag.mission.desc>Определяет задачи раунда, такие как спасение, убийство или охота на монстров, взаимодействуя с определенными типами локаций.</tagger.tag.mission.desc>
+
+		<workshop.tag.item>Предмет</workshop.tag.item>
+		<tagger.tag.item.desc>Фундаментальные строительные блоки модов, определяемые уникальными идентификаторами и компонентами, такими как оружие, машины или контейнеры.</tagger.tag.item.desc>
+
+		<workshop.tag.itemassembly>Сборка предметов</workshop.tag.itemassembly>
+		<tagger.tag.itemassembly.desc>Сериализованные группы существующих предметов и проводки, которые служат заготовками для сложных логических компонентов или модульных планировок комнат.</tagger.tag.itemassembly.desc>
+
+		<workshop.tag.monster>Монстр</workshop.tag.monster>
+		<tagger.tag.monster.desc>Конфигурационные файлы персонажей, определяющие физику рэгдолла, анимацию и поведение искусственного интеллекта видов.</tagger.tag.monster.desc>
+
+		<workshop.tag.language>Язык</workshop.tag.language>
+		<tagger.tag.language.desc>Пакеты локализации, которые переопределяют игровой текст или добавляют поддержку новых языков с использованием корневого элемента infotexts.</tagger.tag.language.desc>
+
+		<workshop.tag.eventset>Набор событий</workshop.tag.eventset>
+		<tagger.tag.eventset.desc>Коллекции случайных событий, таких как появление монстров или опасности окружающей среды, управляемые диспетчером событий игры.</tagger.tag.eventset.desc>
+
+		<workshop.tag.totalconversion>Полная конверсия</workshop.tag.totalconversion>
+		<tagger.tag.totalconversion.desc>Глубокие модификации, заменяющие основной пакет игры для переопределения профессий, параметров генерации карты и фундаментальных систем.</tagger.tag.totalconversion.desc>
+
+		<workshop.tag.art>Искусство</workshop.tag.art>
+		<tagger.tag.art.desc>Визуальные переопределения игровых ресурсов, включая новые текстуры для конструкций, спрайты и графические улучшения.</tagger.tag.art.desc>
+
+		<workshop.tag.environment>Окружение</workshop.tag.environment>
+		<tagger.tag.environment.desc>Процедурные объекты уровня, включая подводные растения, скальные образования и гидротермальные источники, используемые при генерации окружения.</tagger.tag.environment.desc>
+
+		<!-- MARK: Vanilla Hidden Tags -->
+
+		<workshop.tag.outpost>Аванпост</workshop.tag.outpost>
+		<tagger.tag.outpost.desc>Статичные модули, встроенные в уровни в определенных точках, служащие гражданскими, военными или исследовательскими центрами.</tagger.tag.outpost.desc>
+
+		<workshop.tag.beaconstation>Маяк</workshop.tag.beaconstation>
+		<tagger.tag.beaconstation.desc>Второстепенные цели, требующие определенной внутренней логики, такой как гидролокатор и электроснабжение, для признания их отремонтированными.</tagger.tag.beaconstation.desc>
+
+		<workshop.tag.wreck>Обломки</workshop.tag.wreck>
+		<tagger.tag.wreck.desc>Подлежащие спасению обломки и затонувшие корабли, которые часто содержат уникальные биологические опасности, такие как заражения таламусом.</tagger.tag.wreck.desc>
+
+		<workshop.tag.ruin>Руины</workshop.tag.ruin>
+		<tagger.tag.ruin.desc>Древние инопланетные среды, состоящие из различных структур, ловушек и таких сущностей, как Фрактальные стражи.</tagger.tag.ruin.desc>
+
+		<workshop.tag.weapons>Оружие</workshop.tag.weapons>
+		<tagger.tag.weapons.desc>Подкатегория предметов, используемая для идентификации наступательных инструментов и оружия для фильтрации и интеграции логики торговцев.</tagger.tag.weapons.desc>
+
+		<workshop.tag.equipment>Снаряжение</workshop.tag.equipment>
+		<tagger.tag.equipment.desc>Подкатегория предметов, представляющая носимые инструменты, снаряжение и костюмы, используемые персонажами для различных задач.</tagger.tag.equipment.desc>
+
+		<workshop.tag.medical>Медицина</workshop.tag.medical>
+		<tagger.tag.medical.desc>Подкатегория предметов, включающая лекарства, химикаты и инструменты для лечения травм и состояний.</tagger.tag.medical.desc>
+
+		<workshop.tag.gameplaymechanics>Игровые механики</workshop.tag.gameplaymechanics>
+		<tagger.tag.gameplaymechanics.desc>Модификации, изменяющие состояние симуляции, включая физику, медицинские состояния и системы навыков персонажей.</tagger.tag.gameplaymechanics.desc>
+
+		<workshop.tag.qol>QOL</workshop.tag.qol>
+		<tagger.tag.qol.desc>Улучшения качества жизни, ориентированные на упрощение взаимодействий или предоставление информации без изменения основных правил.</tagger.tag.qol.desc>
+
+		<workshop.tag.client-side>Клиентская сторона</workshop.tag.client-side>
+		<tagger.tag.client-side.desc>Локальные модификации, устанавливаемые только на машине игрока, обычно включающие визуальные изменения или улучшения интерфейса.</tagger.tag.client-side.desc>
+
+		<workshop.tag.server-side>Серверная сторона</workshop.tag.server-side>
+		<tagger.tag.server-side.desc>Модификации, изменяющие логику и влияющие на поведение сервера, обычно требующие наличия у клиентов соответствующего контента.</tagger.tag.server-side.desc>
+
+		<workshop.tag.outdated>Устаревшие</workshop.tag.outdated>
+		<tagger.tag.outdated.desc>Индикатор обслуживания, сигнализирующий о том, что мод может вызывать сбои или ошибки синхронизации с текущей версией игры.</tagger.tag.outdated.desc>
+
+		<workshop.tag.gamemode>Игровой режим</workshop.tag.gamemode>
+		<tagger.tag.gamemode.desc>Модификации, изменяющие фундаментальную структуру раунда, например, новые стили игры или сценарии PvP.</tagger.tag.gamemode.desc>
+
+		<workshop.tag.library>Библиотека</workshop.tag.library>
+		<tagger.tag.library.desc>Фундаментальные ресурсы и фреймворки, такие как модули сценариев или вспомогательные библиотеки, используемые другими модами.</tagger.tag.library.desc>
+
+		<!-- MARK: Preset Tags -->
+
+		<workshop.tag.moddertool>Инструмент для моддеров</workshop.tag.moddertool>
+		<tagger.tag.moddertool.desc>Специализированные инструменты и утилиты, разработанные для помощи моддерам в создании и тестировании контента.</tagger.tag.moddertool.desc>
+
+		<workshop.tag.misc>Разное</workshop.tag.misc>
+		<tagger.tag.misc.desc>Разнообразный контент, который не вписывается в другие специфические категории Workshop.</tagger.tag.misc.desc>
+		
 	</Override>
 </infotexts>
