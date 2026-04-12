@@ -12,7 +12,7 @@ using Barotrauma.Steam;
 using HarmonyLib;
 using Microsoft.Xna.Framework;
 
-namespace Tagger
+namespace MoreModTags
 {
     [HarmonyPatch(typeof(MutableWorkshopMenu))]
     public static class TaggerPatches

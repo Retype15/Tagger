@@ -9,18 +9,22 @@
 using Barotrauma;
 
 using System.Runtime.CompilerServices;
+using System.Diagnostics;
+using Microsoft.Xna.Framework;
+using Barotrauma.LuaCs;
+
 [assembly: IgnoresAccessChecksTo("Barotrauma")]
 [assembly: IgnoresAccessChecksTo("DedicatedServer")]
 [assembly: IgnoresAccessChecksTo("BarotraumaCore")]
 
-namespace Tagger
+namespace MoreModTags
 {
     public partial class Plugin : IAssemblyPlugin
     {
         public void Initialize()
         {
 #if CLIENT
-                InitClient();
+            InitClient();
 #endif
         }
 
@@ -32,8 +36,8 @@ namespace Tagger
 #endif
         }
 
-        public void PreInitPatching() 
-        { 
+        public void PreInitPatching()
+        {
             LuaCsLogger.LogMessage(TextSOS.Get("tagger.shared.preinit", "[Tagger] Pre-Initialization phase started.").Value);
         }
 

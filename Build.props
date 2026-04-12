@@ -2,7 +2,7 @@
     <PropertyGroup>
         <!-- IMPORTANT: Should point to <Barotrauma_Install>\LocalMods\<MyModName>\ -->
         <!-- IMPORTANT: ModDeplyDir Path must end with '\' -->
-        <ModDeployDir>D:\ProgramS\ProgramFiles\Steam\steamapps\common\Barotrauma\LocalMods\Tagger\</ModDeployDir>
-        <AssemblyName>Retype.Tagger</AssemblyName>
+        <ModDeployDir>D:\ProgramS\ProgramFiles\Steam\steamapps\common\Barotrauma\LocalMods\MoreModTags\</ModDeployDir>
+        <AssemblyName>Retype.MoreModTags</AssemblyName>
     </PropertyGroup>
 </Project>

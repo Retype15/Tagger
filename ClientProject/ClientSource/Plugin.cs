@@ -7,12 +7,11 @@
 #pragma warning disable IDE0290
 
 using System.Reflection;
-using Barotrauma;
 using HarmonyLib;
 
-namespace Tagger
+namespace MoreModTags
 {
-    public partial class Plugin : IAssemblyPlugin
+    public partial class Plugin
     {
         public Harmony? HarmonyInstance { get; private set; }
 
