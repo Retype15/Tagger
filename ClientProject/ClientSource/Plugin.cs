@@ -12,7 +12,7 @@ using HarmonyLib;
 
 namespace Tagger
 {
-    public partial class Plugin : IAssemblyPlugin
+    public partial class Plugin
     {
         private static Harmony? HarmonyInstance;
 
