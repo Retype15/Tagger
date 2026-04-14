@@ -9,7 +9,7 @@ using Barotrauma;
 #pragma warning disable IDE0130
 #pragma warning disable IDE0290
 
-namespace Tagger
+namespace MoreModTags
 {
     abstract partial class TaggerMenu
     {

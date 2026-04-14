@@ -9,7 +9,7 @@
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace Tagger
+namespace MoreModTags
 {
     public enum TagType { Vanilla, Hidden, Preset, Custom, Unrecognized, NewPlus }
 

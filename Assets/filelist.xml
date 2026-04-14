@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Tagger [ModderTool]" modversion="0.2.0" gameversion="1.11.5.0" corepackage="false" >
-	
-    <Text file="%ModDir%/Localization/BrazilianPortuguese.xml" />
-    <Text file="%ModDir%/Localization/CastillianSpanish.xml" />
-    <Text file="%ModDir%/Localization/English.xml" />
-    <Text file="%ModDir%/Localization/French.xml" />
-    <Text file="%ModDir%/Localization/German.xml" />
-    <Text file="%ModDir%/Localization/Japanese.xml" />
-    <Text file="%ModDir%/Localization/Korean.xml" />
-    <Text file="%ModDir%/Localization/LatinamericanSpanish.xml" />
-    <Text file="%ModDir%/Localization/Polish.xml" />
-    <Text file="%ModDir%/Localization/Russian.xml" />
-    <Text file="%ModDir%/Localization/SimplifiedChinese.xml" />
-    <Text file="%ModDir%/Localization/TraditionalChinese.xml" />
-    <Text file="%ModDir%/Localization/Turkish.xml" />
-
+<contentpackage name="More Mod Tags [ModderTool]" modversion="1.0.1" corepackage="False" steamworkshopid="3687767359" gameversion="1.12.6.2">
+  <Text file="%ModDir%/Localization/BrazilianPortuguese.xml" />
+  <Text file="%ModDir%/Localization/CastillianSpanish.xml" />
+  <Text file="%ModDir%/Localization/English.xml" />
+  <Text file="%ModDir%/Localization/French.xml" />
+  <Text file="%ModDir%/Localization/German.xml" />
+  <Text file="%ModDir%/Localization/Japanese.xml" />
+  <Text file="%ModDir%/Localization/Korean.xml" />
+  <Text file="%ModDir%/Localization/LatinamericanSpanish.xml" />
+  <Text file="%ModDir%/Localization/Polish.xml" />
+  <Text file="%ModDir%/Localization/Russian.xml" />
+  <Text file="%ModDir%/Localization/SimplifiedChinese.xml" />
+  <Text file="%ModDir%/Localization/TraditionalChinese.xml" />
+  <Text file="%ModDir%/Localization/Turkish.xml" />
 </contentpackage>

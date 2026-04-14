@@ -16,7 +16,7 @@ using Barotrauma.LuaCs;
 [assembly: IgnoresAccessChecksTo("DedicatedServer")]
 [assembly: IgnoresAccessChecksTo("BarotraumaCore")]
 
-namespace Tagger
+namespace MoreModTags
 {
     public partial class Plugin : IAssemblyPlugin
     {

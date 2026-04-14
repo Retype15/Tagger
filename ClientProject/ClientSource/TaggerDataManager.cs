@@ -11,7 +11,7 @@ using Barotrauma.IO;
 using System.Xml.Linq;
 using Directory = Barotrauma.IO.Directory;
 
-namespace Tagger
+namespace MoreModTags
 {
     public record CustomTag(Identifier Name, string Description);
 

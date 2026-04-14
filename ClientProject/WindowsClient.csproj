@@ -67,7 +67,7 @@
     <RootNamespace>$(SolutionName.Replace(" ", "_"))</RootNamespace>
     <PlatformTarget>x64</PlatformTarget>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
-    <AssemblyName>Tagger</AssemblyName>
+    <AssemblyName>MoreModTags</AssemblyName>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
 
