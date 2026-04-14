@@ -16,7 +16,7 @@ using Microsoft.Xna.Framework;
 namespace MoreModTags
 {
     [HarmonyPatch(typeof(MutableWorkshopMenu))]
-    public static partial class TaggerPatches
+    public static partial class MTEPatches
     {
         // MARK: Steam Hidden Tags
         public static readonly ImmutableArray<Identifier> SteamHiddenTags = [.. new[]
@@ -63,7 +63,7 @@ namespace MoreModTags
             __result.Content.ClearChildren();
             var processedTags = new HashSet<Identifier>();
 
-            RLogger.LogDebug($"[Tagger] Building tags list. Found {SteamManager.Workshop.Tags.Length} Steam tags.");
+            RLogger.LogDebug($"[MTE] Building tags list. Found {SteamManager.Workshop.Tags.Length} Steam tags.");
 
             foreach (var tag in SteamManager.Workshop.Tags)
             {
@@ -72,12 +72,12 @@ namespace MoreModTags
                 processedTags.Add(tag);
             }
 
-            RLogger.LogDebug($"[Tagger] Injecting {SteamHiddenTags.Length} hidden and {ImmutableCustomTags.Length} preset tags.");
+            RLogger.LogDebug($"[MTE] Injecting {SteamHiddenTags.Length} hidden and {ImmutableCustomTags.Length} preset tags.");
             InjectCategory(SteamHiddenTags, TagType.Hidden);
             InjectCategory(ImmutableCustomTags, TagType.Preset);
 
-            var customTags = TaggerDataManager.GetCustomTags();
-            RLogger.LogDebug($"[Tagger] Injecting {customTags.Count} custom user tags.");
+            var customTags = MTEDataManager.GetCustomTags();
+            RLogger.LogDebug($"[MTE] Injecting {customTags.Count} custom user tags.");
             foreach (var customTag in customTags)
             {
                 if (processedTags.Contains(customTag.Name)) continue;
@@ -88,7 +88,7 @@ namespace MoreModTags
 
             if (canBeFocused) { InjectNewPlusButton(__result.Content, canBeFocused); }
 
-            RLogger.LogDebug($"[Tagger] Total buttons in list: {__result.Content.CountChildren}");
+            RLogger.LogDebug($"[MTE] Total buttons in list: {__result.Content.CountChildren}");
 
             __result.UpdateScrollBarSize();
             __result.Content.RectTransform.RecalculateChildren(true);
@@ -110,14 +110,14 @@ namespace MoreModTags
             if (isCustom)
             {
                 GUIContextMenu.CreateContextMenu(
-                    new ContextMenuOption(TextSOS.Get("tagger.button.edit", "Edit").Value, isEnabled: true, onSelected: () => ShowTagEditor(parent, btn, id)),
-                    new ContextMenuOption(TextSOS.Get("tagger.button.delete", "Delete").Value, isEnabled: true, onSelected: () => ShowDeleteConfirmation(parent, btn, id))
+                    new ContextMenuOption(TextSOS.Get("mte.button.edit", "Edit").Value, isEnabled: true, onSelected: () => ShowTagEditor(parent, btn, id)),
+                    new ContextMenuOption(TextSOS.Get("mte.button.delete", "Delete").Value, isEnabled: true, onSelected: () => ShowDeleteConfirmation(parent, btn, id))
                 );
             }
             else
             {
                 GUIContextMenu.CreateContextMenu(
-                    new ContextMenuOption(TextSOS.Get("tagger.button.savetag", "Save Tag").Value, isEnabled: true, onSelected: () => ShowTagEditor(parent, btn, id, isConverting: true))
+                    new ContextMenuOption(TextSOS.Get("mte.button.savetag", "Save Tag").Value, isEnabled: true, onSelected: () => ShowTagEditor(parent, btn, id, isConverting: true))
                 );
             }
         }
@@ -131,7 +131,7 @@ namespace MoreModTags
 
             msgBox.Buttons[0].OnClicked = (yesBtn, _) =>
             {
-                TaggerDataManager.RemoveCustomTag(tag);
+                MTEDataManager.RemoveCustomTag(tag);
                 parent.RemoveChild(tagBtn);
                 parent.RectTransform.RecalculateChildren(true);
                 msgBox.Close();
@@ -143,19 +143,19 @@ namespace MoreModTags
         private static void ShowTagEditor(GUIComponent parent, GUIButton? tagBtn, Identifier? oldTag = null, bool isConverting = false)
         {
             bool isEditing = oldTag != null && tagBtn != null && !isConverting;
-            var header = isEditing ? TextSOS.Get("tagger.header.edit", "Edit Tag") : (isConverting ? TextSOS.Get("tagger.header.convert", "Add to Custom") : TextSOS.Get("tagger.header.newtag", "New Custom Tag"));
+            var header = isEditing ? TextSOS.Get("mte.header.edit", "Edit Tag") : (isConverting ? TextSOS.Get("mte.header.convert", "Add to Custom") : TextSOS.Get("mte.header.newtag", "New Custom Tag"));
 
             var msgBox = new GUIMessageBox(header.Value, string.Empty, buttons: [TextManager.Get("ok"), TextManager.Get("cancel")], relativeSize: new Vector2(0.3f, 0.5f));
             var mainLayout = new GUILayoutGroup(new RectTransform(new Vector2(0.95f, 0.75f), msgBox.Content.RectTransform, Anchor.TopCenter)) { Stretch = true, RelativeSpacing = 0.02f };
 
-            _ = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.05f), mainLayout.RectTransform), TextSOS.Get("tagger.label.name", "TAG NAME").Value, font: GUIStyle.SubHeadingFont);
+            _ = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.05f), mainLayout.RectTransform), TextSOS.Get("mte.label.name", "TAG NAME").Value, font: GUIStyle.SubHeadingFont);
             var nameBox = new GUITextBox(new RectTransform(new Vector2(1.0f, 0.15f), mainLayout.RectTransform),
                 text: (isEditing || isConverting) ? oldTag!.Value.Value : "")
             { MaxTextLength = 25 };
 
-            _ = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.05f), mainLayout.RectTransform), TextSOS.Get("tagger.label.description", "DESCRIPTION").Value, font: GUIStyle.SubHeadingFont);
-            string currentDesc = isEditing ? (TaggerDataManager.GetCustomTags().FirstOrDefault(t => t.Name == oldTag)?.Description ?? "") : "";
-            var descBox = TaggerMenu.ScrollableTextBox(mainLayout, 6.0f, currentDesc);
+            _ = new GUITextBlock(new RectTransform(new Vector2(1.0f, 0.05f), mainLayout.RectTransform), TextSOS.Get("mte.label.description", "DESCRIPTION").Value, font: GUIStyle.SubHeadingFont);
+            string currentDesc = isEditing ? (MTEDataManager.GetCustomTags().FirstOrDefault(t => t.Name == oldTag)?.Description ?? "") : "";
+            var descBox = MTEMenu.ScrollableTextBox(mainLayout, 6.0f, currentDesc);
 
             msgBox.Buttons[0].OnClicked = (okBtn, _) =>
             {
@@ -165,16 +165,16 @@ namespace MoreModTags
                 if (!CheckText().IsMatch(input: newNameStr))
                 {
                     nameBox.Flash(GUIStyle.Red);
-                    GUI.AddMessage(TextSOS.Get("tagger.error.invalidtagname", "Invalid tag name. Only letters, numbers, spaces, and underscores are allowed.").Value, Color.Red, 10.0f);
+                    GUI.AddMessage(TextSOS.Get("mte.error.invalidtagname", "Invalid tag name. Only letters, numbers, spaces, and underscores are allowed.").Value, Color.Red, 10.0f);
                     return false;
                 }
 
                 var newName = newNameStr.ToIdentifier();
                 var newDesc = descBox.Text.Trim();
 
-                RLogger.LogDebug($"[Tagger] Confirming Save/Update: {newName} (Converted: {isConverting})");
-                if (isEditing) { TaggerDataManager.RemoveCustomTag(oldTag!.Value); }
-                TaggerDataManager.SaveCustomTag(new CustomTag(newName, newDesc));
+                RLogger.LogDebug($"[MTE] Confirming Save/Update: {newName} (Converted: {isConverting})");
+                if (isEditing) { MTEDataManager.RemoveCustomTag(oldTag!.Value); }
+                MTEDataManager.SaveCustomTag(new CustomTag(newName, newDesc));
 
                 if (isEditing || isConverting)
                 {
@@ -184,10 +184,10 @@ namespace MoreModTags
                 var nbtn = TagBuilder.CreateButton(parent, newName, TagType.Custom, canFocus: true, newDesc);
                 nbtn.Selected = true;
 
-                var plusBtn = parent.Children.FirstOrDefault(c => c.UserData is Identifier id && id == "tagger_add_btn_placeholder");
+                var plusBtn = parent.Children.FirstOrDefault(c => c.UserData is Identifier id && id == "mte_add_btn_placeholder");
                 plusBtn?.RectTransform.SetAsLastChild();
 
-                RLogger.LogDebug($"[Tagger] Tag list UI updated.");
+                RLogger.LogDebug($"[MTE] Tag list UI updated.");
                 parent.RectTransform.RecalculateChildren(true);
                 parent.ForceLayoutRecalculation();
                 msgBox.Close();
@@ -199,12 +199,12 @@ namespace MoreModTags
 
         private static void InjectNewPlusButton(GUIComponent parent, bool canBeFocused)
         {
-            var plusBtn = new GUIButton(new RectTransform(new Vector2(0.25f, 1.0f / 8.0f), parent.RectTransform), TextSOS.Get("tagger.button.newplus", "New +").Value, style: "GUIButtonRound")
+            var plusBtn = new GUIButton(new RectTransform(new Vector2(0.25f, 1.0f / 8.0f), parent.RectTransform), TextSOS.Get("mte.button.newplus", "New +").Value, style: "GUIButtonRound")
             {
                 CanBeFocused = canBeFocused,
-                UserData = "tagger_add_btn_placeholder".ToIdentifier()
+                UserData = "mte_add_btn_placeholder".ToIdentifier()
             };
-            TagBuilder.ApplyStyle(plusBtn, TagType.NewPlus, TextSOS.Get("tagger.tooltip.addnew", "Click to create a new custom user tag.").Value);
+            TagBuilder.ApplyStyle(plusBtn, TagType.NewPlus, TextSOS.Get("mte.tooltip.addnew", "Click to create a new custom user tag.").Value);
             plusBtn.RectTransform.NonScaledSize = plusBtn.Font.MeasureString(plusBtn.Text).ToPoint() + new Point(GUI.IntScale(20), GUI.IntScale(5));
             plusBtn.RectTransform.IsFixedSize = true;
             plusBtn.OnClicked = (_, _) => { ShowTagEditor(parent, null, null); return true; };

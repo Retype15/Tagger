@@ -17,22 +17,22 @@ namespace MoreModTags
 
         public static void InitClient()
         {
-            if (HarmonyInstance == null && !Harmony.HasAnyPatches("com.tagger"))
+            if (HarmonyInstance == null && !Harmony.HasAnyPatches("com.Retype15.mte"))
             {
-                HarmonyInstance = new Harmony("com.tagger");
+                HarmonyInstance = new Harmony("com.Retyp15.mte");
 
                 try
                 {
                     HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
 
-                    RLogger.Log(TextSOS.Get("tagger.client.loaded", "[Tagger] Patches applied.").Value);
+                    RLogger.Log(TextSOS.Get("mte.client.loaded", "[MTE] Patches applied.").Value);
                 }
                 catch (Exception e)
                 {
-                    RLogger.Error(TextSOS.Get("tagger.error.critical", "[Tagger] Critical error applying patches: [error]").Value.Replace("[error]", e.Message));
+                    RLogger.Error(TextSOS.Get("mte.error.critical", "[MTE] Critical error applying patches: [error]").Value.Replace("[error]", e.Message));
                 }
             }
-            else RLogger.Log(TextSOS.Get("tagger.client.patched", "[Tagger] Already patched.").Value);
+            else RLogger.Log(TextSOS.Get("mte.client.patched", "[MTE] Already patched.").Value);
 
         }
 

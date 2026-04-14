@@ -3,113 +3,113 @@
 	<Override>
 		<!-- MARK: Statics -->
 
-		<tagger.title.vanilla>Resmi Steam Workshop Etiketi</tagger.title.vanilla>
-		<tagger.title.hidden>Gizli Steam Workshop Etiketi</tagger.title.hidden>
-		<tagger.title.preset>Özel Hazır Etiket</tagger.title.preset>
-		<tagger.title.unrecognized>Tanımlanamayan Steam Etiketi. \nEtiket Özel Listeye kaydedilmedi, sağ tıklayarak kaydedebilirsiniz.</tagger.title.unrecognized>
-		<tagger.title.custom>Özel Etiket. Düzenlemek/silmek için sağ tıklayın.</tagger.title.custom>
-		<tagger.title.newplus>Yeni Özel Etiket</tagger.title.newplus>
+		<mte.title.vanilla>Resmi Steam Workshop Etiketi</mte.title.vanilla>
+		<mte.title.hidden>Gizli Steam Workshop Etiketi</mte.title.hidden>
+		<mte.title.preset>Özel Hazır Etiket</mte.title.preset>
+		<mte.title.unrecognized>Tanımlanamayan Steam Etiketi. \nEtiket Özel Listeye kaydedilmedi, sağ tıklayarak kaydedebilirsiniz.</mte.title.unrecognized>
+		<mte.title.custom>Özel Etiket. Düzenlemek/silmek için sağ tıklayın.</mte.title.custom>
+		<mte.title.newplus>Yeni Özel Etiket</mte.title.newplus>
 		
-		<tagger.button.edit>Düzenle</tagger.button.edit>
-		<tagger.button.delete>Sil</tagger.button.delete>
-		<tagger.header.edit>Etiketi Düzenle</tagger.header.edit>
-		<tagger.label.name>ETİKET ADI</tagger.label.name>
-		<tagger.label.description>AÇIKLAMA</tagger.label.description>
-		<tagger.tooltip.addnew>Yeni bir özel kullanıcı etiketi oluşturmak için tıklayın.</tagger.tooltip.addnew>
-		<tagger.button.newplus>Yeni +</tagger.button.newplus>
-		<tagger.button.savetag>Etiketi Kaydet</tagger.button.savetag>
-		<tagger.header.convert>Etiketi Özel Listeye Kaydet</tagger.header.convert>
+		<mte.button.edit>Düzenle</mte.button.edit>
+		<mte.button.delete>Sil</mte.button.delete>
+		<mte.header.edit>Etiketi Düzenle</mte.header.edit>
+		<mte.label.name>ETİKET ADI</mte.label.name>
+		<mte.label.description>AÇIKLAMA</mte.label.description>
+		<mte.tooltip.addnew>Yeni bir özel kullanıcı etiketi oluşturmak için tıklayın.</mte.tooltip.addnew>
+		<mte.button.newplus>Yeni +</mte.button.newplus>
+		<mte.button.savetag>Etiketi Kaydet</mte.button.savetag>
+		<mte.header.convert>Etiketi Özel Listeye Kaydet</mte.header.convert>
 
-		<tagger.client.loaded>[Tagger] Yamalar uygulandı.</tagger.client.loaded>
-		<tagger.client.patched>[Tagger] Zaten yamalanmış.</tagger.client.patched>
-		<tagger.error.xmlload>[Tagger] XML Yükleme Hatası: [error]</tagger.error.xmlload>
-		<tagger.error.xmlsave>[Tagger] XML Kaydetme Hatası: [error]</tagger.error.xmlsave>
-		<tagger.error.critical>[Tagger] Yama uygulanırken kritik hata: [error]</tagger.error.critical>
-		<tagger.error.invalidtagname>Geçersiz etiket adı. Yalnızca harfler, rakamlar, boşluklar ve alt çizgiler kullanılabilir.</tagger.error.invalidtagname>
+		<mte.client.loaded>[MTE] Yamalar uygulandı.</mte.client.loaded>
+		<mte.client.patched>[MTE] Zaten yamalanmış.</mte.client.patched>
+		<mte.error.xmlload>[MTE] XML Yükleme Hatası: [error]</mte.error.xmlload>
+		<mte.error.xmlsave>[MTE] XML Kaydetme Hatası: [error]</mte.error.xmlsave>
+		<mte.error.critical>[MTE] Yama uygulanırken kritik hata: [error]</mte.error.critical>
+		<mte.error.invalidtagname>Geçersiz etiket adı. Yalnızca harfler, rakamlar, boşluklar ve alt çizgiler kullanılabilir.</mte.error.invalidtagname>
 
 		<!-- MARK: Vanilla Tags -->
 
 		<workshop.tag.submarine>Denizaltı</workshop.tag.submarine>
-		<tagger.tag.submarine.desc>Gemi gövdeleri, boşluklar, yapılar, öğeler ve navigasyon için yol noktaları içeren, oyuncu tarafından kontrol edilebilen ana araçlar.</tagger.tag.submarine.desc>
+		<mte.tag.submarine.desc>Gemi gövdeleri, boşluklar, yapılar, öğeler ve navigasyon için yol noktaları içeren, oyuncu tarafından kontrol edilebilen ana araçlar.</mte.tag.submarine.desc>
 
 		<workshop.tag.mission>Görev</workshop.tag.mission>
-		<tagger.tag.mission.desc>Kurtarma, suikast veya canavar avı gibi tur hedeflerini tanımlar ve belirli konum tipleriyle etkileşime girer.</tagger.tag.mission.desc>
+		<mte.tag.mission.desc>Kurtarma, suikast veya canavar avı gibi tur hedeflerini tanımlar ve belirli konum tipleriyle etkileşime girer.</mte.tag.mission.desc>
 
 		<workshop.tag.item>Eşya</workshop.tag.item>
-		<tagger.tag.item.desc>Benzersiz tanımlayıcılar ve silahlar, makineler veya konteynerler gibi bileşenlerle tanımlanan modlamanın temel yapı taşları.</tagger.tag.item.desc>
+		<mte.tag.item.desc>Benzersiz tanımlayıcılar ve silahlar, makineler veya konteynerler gibi bileşenlerle tanımlanan modlamanın temel yapı taşları.</mte.tag.item.desc>
 
 		<workshop.tag.itemassembly>Eşya Grubu</workshop.tag.itemassembly>
-		<tagger.tag.itemassembly.desc>Karmaşık mantık bileşenleri veya modüler oda düzenleri için prefabrik görevi gören, mevcut öğelerin ve kablolamanın serileştirilmiş grupları.</tagger.tag.itemassembly.desc>
+		<mte.tag.itemassembly.desc>Karmaşık mantık bileşenleri veya modüler oda düzenleri için prefabrik görevi gören, mevcut öğelerin ve kablolamanın serileştirilmiş grupları.</mte.tag.itemassembly.desc>
 
 		<workshop.tag.monster>Canavar</workshop.tag.monster>
-		<tagger.tag.monster.desc>Türlerin ragdoll fiziğini, animasyonlarını ve yapay zeka davranışlarını tanımlayan karakter yapılandırma dosyaları.</tagger.tag.monster.desc>
+		<mte.tag.monster.desc>Türlerin ragdoll fiziğini, animasyonlarını ve yapay zeka davranışlarını tanımlayan karakter yapılandırma dosyaları.</mte.tag.monster.desc>
 
 		<workshop.tag.language>Dil</workshop.tag.language>
-		<tagger.tag.language.desc>infotexts kök öğesini kullanarak oyun metnini geçersiz kılan veya yeni diller için destek ekleyen yerelleştirme paketleri.</tagger.tag.language.desc>
+		<mte.tag.language.desc>infotexts kök öğesini kullanarak oyun metnini geçersiz kılan veya yeni diller için destek ekleyen yerelleştirme paketleri.</mte.tag.language.desc>
 
 		<workshop.tag.eventset>Olay Seti</workshop.tag.eventset>
-		<tagger.tag.eventset.desc>Oyunun olay yöneticisi tarafından yönetilen, canavar doğmaları veya çevresel tehlikeler gibi rastgele olayların koleksiyonları.</tagger.tag.eventset.desc>
+		<mte.tag.eventset.desc>Oyunun olay yöneticisi tarafından yönetilen, canavar doğmaları veya çevresel tehlikeler gibi rastgele olayların koleksiyonları.</mte.tag.eventset.desc>
 
 		<workshop.tag.totalconversion>Tam Dönüşüm</workshop.tag.totalconversion>
-		<tagger.tag.totalconversion.desc>Meslekleri, harita oluşturma parametrelerini ve temel sistemleri yeniden tanımlamak için oyunun ana paketini değiştiren kapsamlı modifikasyonlar.</tagger.tag.totalconversion.desc>
+		<mte.tag.totalconversion.desc>Meslekleri, harita oluşturma parametrelerini ve temel sistemleri yeniden tanımlamak için oyunun ana paketini değiştiren kapsamlı modifikasyonlar.</mte.tag.totalconversion.desc>
 
 		<workshop.tag.art>Sanat</workshop.tag.art>
-		<tagger.tag.art.desc>Yapılar için yeni dokular, sprite'lar ve grafiksel geliştirmeler dahil olmak üzere oyun varlıkları için görsel geçersiz kılmalar.</tagger.tag.art.desc>
+		<mte.tag.art.desc>Yapılar için yeni dokular, sprite'lar ve grafiksel geliştirmeler dahil olmak üzere oyun varlıkları için görsel geçersiz kılmalar.</mte.tag.art.desc>
 
 		<workshop.tag.environment>Ortam</workshop.tag.environment>
-		<tagger.tag.environment.desc>Çevresel üretimde kullanılan deniz altı bitkileri, kaya oluşumları ve hidrotermal bacalar dahil prosedürel seviye nesneleri.</tagger.tag.environment.desc>
+		<mte.tag.environment.desc>Çevresel üretimde kullanılan deniz altı bitkileri, kaya oluşumları ve hidrotermal bacalar dahil prosedürel seviye nesneleri.</mte.tag.environment.desc>
 
 		<!-- MARK: Vanilla Hidden Tags -->
 
 		<workshop.tag.outpost>İstasyon</workshop.tag.outpost>
-		<tagger.tag.outpost.desc>Bölümlerde belirli noktalara yerleştirilen, sivil, askeri veya araştırma merkezleri olarak hizmet veren statik modüller.</tagger.tag.outpost.desc>
+		<mte.tag.outpost.desc>Bölümlerde belirli noktalara yerleştirilen, sivil, askeri veya araştırma merkezleri olarak hizmet veren statik modüller.</mte.tag.outpost.desc>
 
 		<workshop.tag.beaconstation>Fener İstasyonu</workshop.tag.beaconstation>
-		<tagger.tag.beaconstation.desc>Tamir edilmiş sayılmaları için sonar ve güç kaynağı gibi belirli dahili mantık gerektiren ikincil hedefler.</tagger.tag.beaconstation.desc>
+		<mte.tag.beaconstation.desc>Tamir edilmiş sayılmaları için sonar ve güç kaynağı gibi belirli dahili mantık gerektiren ikincil hedefler.</mte.tag.beaconstation.desc>
 
 		<workshop.tag.wreck>Enkaz</workshop.tag.wreck>
-		<tagger.tag.wreck.desc>Genellikle Thalamus istilası gibi benzersiz biyolojik tehlikelere ev sahipliği yapan kurtarılabilir enkazlar ve batık gemiler.</tagger.tag.wreck.desc>
+		<mte.tag.wreck.desc>Genellikle Thalamus istilası gibi benzersiz biyolojik tehlikelere ev sahipliği yapan kurtarılabilir enkazlar ve batık gemiler.</mte.tag.wreck.desc>
 
 		<workshop.tag.ruin>Harabe</workshop.tag.ruin>
-		<tagger.tag.ruin.desc>Farklı yapılar, tuzaklar ve Fraktal Muhafızlar gibi varlıklardan oluşan eski uzaylı ortamları.</tagger.tag.ruin.desc>
+		<mte.tag.ruin.desc>Farklı yapılar, tuzaklar ve Fraktal Muhafızlar gibi varlıklardan oluşan eski uzaylı ortamları.</mte.tag.ruin.desc>
 
 		<workshop.tag.weapons>Silahlar</workshop.tag.weapons>
-		<tagger.tag.weapons.desc>Filtreleme ve tüccar mantığı entegrasyonu için saldırı araçlarını ve silahlarını tanımlamak için kullanılan eşya alt kategorisi.</tagger.tag.weapons.desc>
+		<mte.tag.weapons.desc>Filtreleme ve tüccar mantığı entegrasyonu için saldırı araçlarını ve silahlarını tanımlamak için kullanılan eşya alt kategorisi.</mte.tag.weapons.desc>
 
 		<workshop.tag.equipment>Ekipman</workshop.tag.equipment>
-		<tagger.tag.equipment.desc>Karakterlerin çeşitli görevler için kullandığı giyilebilir araçları, donanımları ve giysileri temsil eden eşya alt kategorisi.</tagger.tag.equipment.desc>
+		<mte.tag.equipment.desc>Karakterlerin çeşitli görevler için kullandığı giyilebilir araçları, donanımları ve giysileri temsil eden eşya alt kategorisi.</mte.tag.equipment.desc>
 
 		<workshop.tag.medical>Tıbbi</workshop.tag.medical>
-		<tagger.tag.medical.desc>İyileşme ve rahatsızlıklar için ilaçlar, kimyasallar ve tedavi araçlarını içeren eşya alt kategorisi.</tagger.tag.medical.desc>
+		<mte.tag.medical.desc>İyileşme ve rahatsızlıklar için ilaçlar, kimyasallar ve tedavi araçlarını içeren eşya alt kategorisi.</mte.tag.medical.desc>
 
 		<workshop.tag.gameplaymechanics>Oynanış Mekanikleri</workshop.tag.gameplaymechanics>
-		<tagger.tag.gameplaymechanics.desc>Fizik, sağlık sorunları ve karakter beceri sistemleri dahil olmak üzere simülasyon durumunu değiştiren modifikasyonlar.</tagger.tag.gameplaymechanics.desc>
+		<mte.tag.gameplaymechanics.desc>Fizik, sağlık sorunları ve karakter beceri sistemleri dahil olmak üzere simülasyon durumunu değiştiren modifikasyonlar.</mte.tag.gameplaymechanics.desc>
 
 		<workshop.tag.qol>QOL</workshop.tag.qol>
-		<tagger.tag.qol.desc>Temel kuralları değiştirmeden etkileşimleri basitleştirmeye veya bilgi sağlamaya odaklanan yaşam kalitesi (QOL) iyileştirmeleri.</tagger.tag.qol.desc>
+		<mte.tag.qol.desc>Temel kuralları değiştirmeden etkileşimleri basitleştirmeye veya bilgi sağlamaya odaklanan yaşam kalitesi (QOL) iyileştirmeleri.</mte.tag.qol.desc>
 
 		<workshop.tag.client-side>İstemci Tarafı</workshop.tag.client-side>
-		<tagger.tag.client-side.desc>Sadece oyuncunun makinesine yüklenen, genellikle görsel değişiklikler veya arayüz geliştirmeleri içeren yerel modifikasyonlar.</tagger.tag.client-side.desc>
+		<mte.tag.client-side.desc>Sadece oyuncunun makinesine yüklenen, genellikle görsel değişiklikler veya arayüz geliştirmeleri içeren yerel modifikasyonlar.</mte.tag.client-side.desc>
 
 		<workshop.tag.server-side>Sunucu Tarafı</workshop.tag.server-side>
-		<tagger.tag.server-side.desc>Mantığı değiştiren ve sunucu davranışını etkileyen, genellikle istemcilerin eşleşen içeriğe sahip olmasını gerektiren modifikasyonlar.</tagger.tag.server-side.desc>
+		<mte.tag.server-side.desc>Mantığı değiştiren ve sunucu davranışını etkileyen, genellikle istemcilerin eşleşen içeriğe sahip olmasını gerektiren modifikasyonlar.</mte.tag.server-side.desc>
 
 		<workshop.tag.outdated>Güncelliğini Yitirmiş</workshop.tag.outdated>
-		<tagger.tag.outdated.desc>Bir modun oyunun mevcut sürümüyle çökmelere veya senkronizasyon hatalarına neden olabileceğini gösteren bakım göstergesi.</tagger.tag.outdated.desc>
+		<mte.tag.outdated.desc>Bir modun oyunun mevcut sürümüyle çökmelere veya senkronizasyon hatalarına neden olabileceğini gösteren bakım göstergesi.</mte.tag.outdated.desc>
 
 		<workshop.tag.gamemode>Oyun Modu</workshop.tag.gamemode>
-		<tagger.tag.gamemode.desc>Yeni oyun stilleri veya PvP senaryoları gibi bir turun temel yapısını değiştiren modifikasyonlar.</tagger.tag.gamemode.desc>
+		<mte.tag.gamemode.desc>Yeni oyun stilleri veya PvP senaryoları gibi bir turun temel yapısını değiştiren modifikasyonlar.</mte.tag.gamemode.desc>
 
 		<workshop.tag.library>Kütüphane</workshop.tag.library>
-		<tagger.tag.library.desc>Diğer modlar tarafından kullanılan komut dosyası modülleri veya yardımcı kütüphaneler gibi temel kaynaklar ve çerçeveler.</tagger.tag.library.desc>
+		<mte.tag.library.desc>Diğer modlar tarafından kullanılan komut dosyası modülleri veya yardımcı kütüphaneler gibi temel kaynaklar ve çerçeveler.</mte.tag.library.desc>
 
 		<!-- MARK: Preset Tags -->
 
 		<workshop.tag.moddertool>Modder Aracı</workshop.tag.moddertool>
-		<tagger.tag.moddertool.desc>Modcuların içerik oluşturmasına ve test etmesine yardımcı olmak için tasarlanmış özel araçlar ve yardımcı programlar.</tagger.tag.moddertool.desc>
+		<mte.tag.moddertool.desc>Modcuların içerik oluşturmasına ve test etmesine yardımcı olmak için tasarlanmış özel araçlar ve yardımcı programlar.</mte.tag.moddertool.desc>
 
 		<workshop.tag.misc>Çeşitli</workshop.tag.misc>
-		<tagger.tag.misc.desc>Diğer belirli Workshop kategorilerine uymayan çeşitli içerikler.</tagger.tag.misc.desc>
+		<mte.tag.misc.desc>Diğer belirli Workshop kategorilerine uymayan çeşitli içerikler.</mte.tag.misc.desc>
 		
 	</Override>
 </infotexts>

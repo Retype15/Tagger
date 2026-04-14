@@ -1,10 +1,10 @@
-# Tagger [ModderTool]
+# Mod Tags Enhanced [ModderTool]
 
 An essential tool for Barotrauma modders that expands categorization options when publishing content to the Steam Workshop, making every available Workshop tag accessible.
 
 ---
 
-**Tagger** is a client-side plugin that patches the Workshop publishing menu to include a wide range of custom tags that are not natively available. This allows content creators to categorize their mods with greater precision, making it easier for players to find exactly what they are looking for, and giving players the ability to filter results more effectively using these tags.
+**MTE** is a client-side plugin that patches the Workshop publishing menu to include a wide range of custom tags that are not natively available. This allows content creators to categorize their mods with greater precision, making it easier for players to find exactly what they are looking for, and giving players the ability to filter results more effectively using these tags.
 
 It adds the following categories to the Workshop tags menu:
 
@@ -42,5 +42,5 @@ This project features full support for the following languages:
 
 This project is licensed under the **GNU GPLv3**. Please refer to the [`LICENCE`](./LICENCE) file for more details.
 
-GitHub Project: [Tagger](https://github.com/Retype15/Tagger)
+GitHub Project: [Mod Tags Enhanced](https://github.com/Retype15/Tagger)
 Developer: [Retype15](https://github.com/Retype15)

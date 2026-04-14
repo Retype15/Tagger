@@ -3,113 +3,113 @@
 	<Override>
 		<!-- MARK: Statics -->
 
-		<tagger.title.vanilla>Steam 창작마당 공식 태그</tagger.title.vanilla>
-		<tagger.title.hidden>Steam 창작마당 숨겨진 태그</tagger.title.hidden>
-		<tagger.title.preset>사용자 지정 프리셋 태그</tagger.title.preset>
-		<tagger.title.custom>사용자 지정 태그. 마우스 오른쪽 버튼을 클릭하여 편집/삭제합니다.</tagger.title.custom>
-		<tagger.title.newplus>새 사용자 지정 태그</tagger.title.newplus>
+		<mte.title.vanilla>Steam 창작마당 공식 태그</mte.title.vanilla>
+		<mte.title.hidden>Steam 창작마당 숨겨진 태그</mte.title.hidden>
+		<mte.title.preset>사용자 지정 프리셋 태그</mte.title.preset>
+		<mte.title.custom>사용자 지정 태그. 마우스 오른쪽 버튼을 클릭하여 편집/삭제합니다.</mte.title.custom>
+		<mte.title.newplus>새 사용자 지정 태그</mte.title.newplus>
 		
-		<tagger.button.edit>편집</tagger.button.edit>
-		<tagger.button.delete>삭제</tagger.button.delete>
-		<tagger.header.edit>태그 편집</tagger.header.edit>
-		<tagger.label.name>태그 이름</tagger.label.name>
-		<tagger.label.description>설명</tagger.label.description>
-		<tagger.tooltip.addnew>클릭하여 새 사용자 지정 태그를 만듭니다.</tagger.tooltip.addnew>
-		<tagger.button.newplus>새로 만들기 +</tagger.button.newplus>
-		<tagger.button.savetag>태그 저장</tagger.button.savetag>
-		<tagger.header.convert>사용자 지정 목록에 태그 저장</tagger.header.convert>
-		<tagger.title.unrecognized>인식되지 않은 Steam 태그. \n사용자 지정 목록에 태그가 저장되지 않았습니다, 오른쪽 클릭으로 저장하세요.</tagger.title.unrecognized>
+		<mte.button.edit>편집</mte.button.edit>
+		<mte.button.delete>삭제</mte.button.delete>
+		<mte.header.edit>태그 편집</mte.header.edit>
+		<mte.label.name>태그 이름</mte.label.name>
+		<mte.label.description>설명</mte.label.description>
+		<mte.tooltip.addnew>클릭하여 새 사용자 지정 태그를 만듭니다.</mte.tooltip.addnew>
+		<mte.button.newplus>새로 만들기 +</mte.button.newplus>
+		<mte.button.savetag>태그 저장</mte.button.savetag>
+		<mte.header.convert>사용자 지정 목록에 태그 저장</mte.header.convert>
+		<mte.title.unrecognized>인식되지 않은 Steam 태그. \n사용자 지정 목록에 태그가 저장되지 않았습니다, 오른쪽 클릭으로 저장하세요.</mte.title.unrecognized>
 
-		<tagger.client.loaded>[Tagger] 패치가 적용되었습니다.</tagger.client.loaded>
-		<tagger.client.patched>[Tagger] 이미 패치되었습니다.</tagger.client.patched>
-		<tagger.error.xmlload>[Tagger] XML 로드 오류: [error]</tagger.error.xmlload>
-		<tagger.error.xmlsave>[Tagger] XML 저장 오류: [error]</tagger.error.xmlsave>
-		<tagger.error.critical>[Tagger] 패치 적용 중 치명적 오류: [error]</tagger.error.critical>
-		<tagger.error.invalidtagname>잘못된 태그 이름입니다. 영문자, 숫자, 공백 및 밑줄만 허용됩니다.</tagger.error.invalidtagname>
+		<mte.client.loaded>[MTE] 패치가 적용되었습니다.</mte.client.loaded>
+		<mte.client.patched>[MTE] 이미 패치되었습니다.</mte.client.patched>
+		<mte.error.xmlload>[MTE] XML 로드 오류: [error]</mte.error.xmlload>
+		<mte.error.xmlsave>[MTE] XML 저장 오류: [error]</mte.error.xmlsave>
+		<mte.error.critical>[MTE] 패치 적용 중 치명적 오류: [error]</mte.error.critical>
+		<mte.error.invalidtagname>잘못된 태그 이름입니다. 영문자, 숫자, 공백 및 밑줄만 허용됩니다.</mte.error.invalidtagname>
 
 		<!-- MARK: Vanilla Tags -->
 
 		<workshop.tag.submarine>잠수함</workshop.tag.submarine>
-		<tagger.tag.submarine.desc>선체, 틈새, 구조물, 아이템 및 내비게이션용 웨이포인트를 포함하는 플레이어 제어 가능 주요 함선입니다.</tagger.tag.submarine.desc>
+		<mte.tag.submarine.desc>선체, 틈새, 구조물, 아이템 및 내비게이션용 웨이포인트를 포함하는 플레이어 제어 가능 주요 함선입니다.</mte.tag.submarine.desc>
 
 		<workshop.tag.mission>미션</workshop.tag.mission>
-		<tagger.tag.mission.desc>회수, 암살 또는 몬스터 사냥과 같은 라운드 목표를 정의하며 특정 위치 유형과 상호작용합니다.</tagger.tag.mission.desc>
+		<mte.tag.mission.desc>회수, 암살 또는 몬스터 사냥과 같은 라운드 목표를 정의하며 특정 위치 유형과 상호작용합니다.</mte.tag.mission.desc>
 
 		<workshop.tag.item>아이템</workshop.tag.item>
-		<tagger.tag.item.desc>모딩의 핵심 구성 요소로, 고유 식별자와 무기, 기계 또는 컨테이너와 같은 컴포넌트로 정의됩니다.</tagger.tag.item.desc>
+		<mte.tag.item.desc>모딩의 핵심 구성 요소로, 고유 식별자와 무기, 기계 또는 컨테이너와 같은 컴포넌트로 정의됩니다.</mte.tag.item.desc>
 
 		<workshop.tag.itemassembly>아이템 어셈블리</workshop.tag.itemassembly>
-		<tagger.tag.itemassembly.desc>기존 아이템과 배선의 직렬화된 그룹으로, 복잡한 로직 컴포넌트나 모듈식 방 레이아웃의 프리팹 역할을 합니다.</tagger.tag.itemassembly.desc>
+		<mte.tag.itemassembly.desc>기존 아이템과 배선의 직렬화된 그룹으로, 복잡한 로직 컴포넌트나 모듈식 방 레이아웃의 프리팹 역할을 합니다.</mte.tag.itemassembly.desc>
 
 		<workshop.tag.monster>몬스터</workshop.tag.monster>
-		<tagger.tag.monster.desc>종의 래그돌 물리, 애니메이션 및 인공지능 행동을 정의하는 캐릭터 설정 파일입니다.</tagger.tag.monster.desc>
+		<mte.tag.monster.desc>종의 래그돌 물리, 애니메이션 및 인공지능 행동을 정의하는 캐릭터 설정 파일입니다.</mte.tag.monster.desc>
 
 		<workshop.tag.language>언어</workshop.tag.language>
-		<tagger.tag.language.desc>infotexts 루트 요소를 사용하여 게임 텍스트를 오버라이드하거나 새 언어 지원을 추가하는 로컬라이제이션 패키지입니다.</tagger.tag.language.desc>
+		<mte.tag.language.desc>infotexts 루트 요소를 사용하여 게임 텍스트를 오버라이드하거나 새 언어 지원을 추가하는 로컬라이제이션 패키지입니다.</mte.tag.language.desc>
 
 		<workshop.tag.eventset>이벤트 세트</workshop.tag.eventset>
-		<tagger.tag.eventset.desc>게임의 이벤트 관리자에 의해 제어되는 몬스터 스폰이나 환경 위험과 같은 무작위 발생 이벤트의 모음입니다.</tagger.tag.eventset.desc>
+		<mte.tag.eventset.desc>게임의 이벤트 관리자에 의해 제어되는 몬스터 스폰이나 환경 위험과 같은 무작위 발생 이벤트의 모음입니다.</mte.tag.eventset.desc>
 
 		<workshop.tag.totalconversion>토탈 컨버전</workshop.tag.totalconversion>
-		<tagger.tag.totalconversion.desc>게임의 코어 패키지를 대체하여 직업, 지도 생성 매개변수 및 기본 시스템을 재정의하는 대규모 모드입니다.</tagger.tag.totalconversion.desc>
+		<mte.tag.totalconversion.desc>게임의 코어 패키지를 대체하여 직업, 지도 생성 매개변수 및 기본 시스템을 재정의하는 대규모 모드입니다.</mte.tag.totalconversion.desc>
 
 		<workshop.tag.art>아트</workshop.tag.art>
-		<tagger.tag.art.desc>구조물의 새 텍스처, 스프라이트 및 그래픽 향상을 포함하여 게임 에셋의 비주얼을 오버라이드합니다.</tagger.tag.art.desc>
+		<mte.tag.art.desc>구조물의 새 텍스처, 스프라이트 및 그래픽 향상을 포함하여 게임 에셋의 비주얼을 오버라이드합니다.</mte.tag.art.desc>
 
 		<workshop.tag.environment>환경</workshop.tag.environment>
-		<tagger.tag.environment.desc>환경 생성에 사용되는 해저 식물, 암석 및 열수 분출구와 같은 절차적 레벨 오브젝트입니다.</tagger.tag.environment.desc>
+		<mte.tag.environment.desc>환경 생성에 사용되는 해저 식물, 암석 및 열수 분출구와 같은 절차적 레벨 오브젝트입니다.</mte.tag.environment.desc>
 
 		<!-- MARK: Vanilla Hidden Tags -->
 
 		<workshop.tag.outpost>전초기지</workshop.tag.outpost>
-		<tagger.tag.outpost.desc>레벨의 특정 지점에 배치되는 정적 모듈로, 민간, 군사 또는 연구 허브 역할을 합니다.</tagger.tag.outpost.desc>
+		<mte.tag.outpost.desc>레벨의 특정 지점에 배치되는 정적 모듈로, 민간, 군사 또는 연구 허브 역할을 합니다.</mte.tag.outpost.desc>
 
 		<workshop.tag.beaconstation>비콘 스테이션</workshop.tag.beaconstation>
-		<tagger.tag.beaconstation.desc>수리 완료로 간주되기 위해 소나 및 전력 공급과 같은 특정 내부 로직이 필요한 보조 목표입니다.</tagger.tag.beaconstation.desc>
+		<mte.tag.beaconstation.desc>수리 완료로 간주되기 위해 소나 및 전력 공급과 같은 특정 내부 로직이 필요한 보조 목표입니다.</mte.tag.beaconstation.desc>
 
 		<workshop.tag.wreck>난파선</workshop.tag.wreck>
-		<tagger.tag.wreck.desc>회수 가능한 파편 및 침몰한 함선으로, 종종 살라무스 감염과 같은 독특한 생물학적 위험을 포함합니다.</tagger.tag.wreck.desc>
+		<mte.tag.wreck.desc>회수 가능한 파편 및 침몰한 함선으로, 종종 살라무스 감염과 같은 독특한 생물학적 위험을 포함합니다.</mte.tag.wreck.desc>
 
 		<workshop.tag.ruin>유적</workshop.tag.ruin>
-		<tagger.tag.ruin.desc>독특한 구조물, 함정 및 프랙탈 가디언과 같은 개체로 구성된 고대 외계 환경입니다.</tagger.tag.ruin.desc>
+		<mte.tag.ruin.desc>독특한 구조물, 함정 및 프랙탈 가디언과 같은 개체로 구성된 고대 외계 환경입니다.</mte.tag.ruin.desc>
 
 		<workshop.tag.weapons>무기</workshop.tag.weapons>
-		<tagger.tag.weapons.desc>필터링 및 상인 로직 통합을 위해 공격용 도구와 무기를 식별하는 데 사용되는 아이템 하위 카테고리입니다.</tagger.tag.weapons.desc>
+		<mte.tag.weapons.desc>필터링 및 상인 로직 통합을 위해 공격용 도구와 무기를 식별하는 데 사용되는 아이템 하위 카테고리입니다.</mte.tag.weapons.desc>
 
 		<workshop.tag.equipment>장비</workshop.tag.equipment>
-		<tagger.tag.equipment.desc>캐릭터가 다양한 작업을 수행할 때 사용하는 착용 가능한 도구, 장비 및 슈트를 나타내는 아이템 하위 카테고리입니다.</tagger.tag.equipment.desc>
+		<mte.tag.equipment.desc>캐릭터가 다양한 작업을 수행할 때 사용하는 착용 가능한 도구, 장비 및 슈트를 나타내는 아이템 하위 카테고리입니다.</mte.tag.equipment.desc>
 
 		<workshop.tag.medical>의료</workshop.tag.medical>
-		<tagger.tag.medical.desc>치료 및 상태 이상 회복에 사용되는 의약품, 화학 물질 및 치료 도구를 포함하는 아이템 하위 카테고리입니다.</tagger.tag.medical.desc>
+		<mte.tag.medical.desc>치료 및 상태 이상 회복에 사용되는 의약품, 화학 물질 및 치료 도구를 포함하는 아이템 하위 카테고리입니다.</mte.tag.medical.desc>
 
 		<workshop.tag.gameplaymechanics>게임플레이 메카닉</workshop.tag.gameplaymechanics>
-		<tagger.tag.gameplaymechanics.desc>물리, 건강 상태 및 캐릭터 스킬 시스템과 같은 시뮬레이션 상태를 변경하는 모드입니다.</tagger.tag.gameplaymechanics.desc>
+		<mte.tag.gameplaymechanics.desc>물리, 건강 상태 및 캐릭터 스킬 시스템과 같은 시뮬레이션 상태를 변경하는 모드입니다.</mte.tag.gameplaymechanics.desc>
 
 		<workshop.tag.qol>편의성</workshop.tag.qol>
-		<tagger.tag.qol.desc>기본 규칙을 변경하지 않고 상호작용을 단순화하거나 정보를 제공하는 데 중점을 둔 편의성 향상입니다.</tagger.tag.qol.desc>
+		<mte.tag.qol.desc>기본 규칙을 변경하지 않고 상호작용을 단순화하거나 정보를 제공하는 데 중점을 둔 편의성 향상입니다.</mte.tag.qol.desc>
 
 		<workshop.tag.client-side>클라이언트 사이드</workshop.tag.client-side>
-		<tagger.tag.client-side.desc>플레이어의 로컬 컴퓨터에만 설치되는 모드로, 일반적으로 비주얼 변경이나 UI 향상을 포함합니다.</tagger.tag.client-side.desc>
+		<mte.tag.client-side.desc>플레이어의 로컬 컴퓨터에만 설치되는 모드로, 일반적으로 비주얼 변경이나 UI 향상을 포함합니다.</mte.tag.client-side.desc>
 
 		<workshop.tag.server-side>서버 사이드</workshop.tag.server-side>
-		<tagger.tag.server-side.desc>서버 로직을 변경하고 동작에 영향을 주는 모드로, 일반적으로 클라이언트 측에도 상응하는 콘텐츠가 필요합니다.</tagger.tag.server-side.desc>
+		<mte.tag.server-side.desc>서버 로직을 변경하고 동작에 영향을 주는 모드로, 일반적으로 클라이언트 측에도 상응하는 콘텐츠가 필요합니다.</mte.tag.server-side.desc>
 
 		<workshop.tag.outdated>구식</workshop.tag.outdated>
-		<tagger.tag.outdated.desc>모드가 게임의 현재 버전에서 충돌이나 동기화 오류를 일으킬 수 있음을 나타내는 유지 관리 지표입니다.</tagger.tag.outdated.desc>
+		<mte.tag.outdated.desc>모드가 게임의 현재 버전에서 충돌이나 동기화 오류를 일으킬 수 있음을 나타내는 유지 관리 지표입니다.</mte.tag.outdated.desc>
 
 		<workshop.tag.gamemode>게임 모드</workshop.tag.gamemode>
-		<tagger.tag.gamemode.desc>새 플레이 스타일이나 PvP 시나리오와 같이 라운드의 기본 구조를 변경하는 모드입니다.</tagger.tag.gamemode.desc>
+		<mte.tag.gamemode.desc>새 플레이 스타일이나 PvP 시나리오와 같이 라운드의 기본 구조를 변경하는 모드입니다.</mte.tag.gamemode.desc>
 
 		<workshop.tag.library>라이브러리</workshop.tag.library>
-		<tagger.tag.library.desc>다른 모드가 로직을 실행하는 데 사용하는 스크립트 모듈이나 유틸리티 라이브러리와 같은 기본 리소스 및 프레임워크입니다.</tagger.tag.library.desc>
+		<mte.tag.library.desc>다른 모드가 로직을 실행하는 데 사용하는 스크립트 모듈이나 유틸리티 라이브러리와 같은 기본 리소스 및 프레임워크입니다.</mte.tag.library.desc>
 
 		<!-- MARK: Preset Tags -->
 
 		<workshop.tag.moddertool>모드 도구</workshop.tag.moddertool>
-		<tagger.tag.moddertool.desc>모더가 콘텐츠를 제작하고 테스트하는 것을 돕기 위해 설계된 전용 도구 및 유틸리티입니다.</tagger.tag.moddertool.desc>
+		<mte.tag.moddertool.desc>모더가 콘텐츠를 제작하고 테스트하는 것을 돕기 위해 설계된 전용 도구 및 유틸리티입니다.</mte.tag.moddertool.desc>
 
 		<workshop.tag.misc>기타</workshop.tag.misc>
-		<tagger.tag.misc.desc>다른 특정 창작마당 카테고리에 맞지 않는 기타 콘텐츠입니다.</tagger.tag.misc.desc>
+		<mte.tag.misc.desc>다른 특정 창작마당 카테고리에 맞지 않는 기타 콘텐츠입니다.</mte.tag.misc.desc>
 		
 	</Override>
 </infotexts>
