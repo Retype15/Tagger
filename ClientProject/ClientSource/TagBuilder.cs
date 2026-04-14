@@ -27,9 +27,9 @@ namespace MoreModTags
 
         public static TagType GetCategory(Identifier id)
         {
-            if (TaggerPatches.SteamHiddenTags.Contains(id)) return TagType.Hidden;
-            if (TaggerPatches.ImmutableCustomTags.Contains(id)) return TagType.Preset;
-            if (TaggerDataManager.GetCustomTags().Any(t => t.Name == id)) return TagType.Custom;
+            if (MTEPatches.SteamHiddenTags.Contains(id)) return TagType.Hidden;
+            if (MTEPatches.ImmutableCustomTags.Contains(id)) return TagType.Preset;
+            if (MTEDataManager.GetCustomTags().Any(t => t.Name == id)) return TagType.Custom;
             if (Barotrauma.Steam.SteamManager.Workshop.Tags.Contains(id)) return TagType.Vanilla;
             return TagType.Unrecognized;
         }
@@ -57,12 +57,12 @@ namespace MoreModTags
             {
                 btn.OnSecondaryClicked = (_, _) =>
                 {
-                    TaggerPatches.ShowTagContextMenu(parent, btn, id, category == TagType.Custom);
+                    MTEPatches.ShowTagContextMenu(parent, btn, id, category == TagType.Custom);
                     return true;
                 };
             }
 
-            RLogger.LogDebug($"[Tagger] Created button for {id} ({category})");
+            RLogger.LogDebug($"[MTE] Created button for {id} ({category})");
             return btn;
         }
 
@@ -73,9 +73,9 @@ namespace MoreModTags
             btn.HoverColor = Color.Lerp(baseColor, Color.White, 0.30f);
             btn.SelectedColor = Color.Lerp(baseColor, Color.White, 0.70f);
 
-            LocalizedString title = TextSOS.Get($"tagger.title.{category.ToString().ToLower()}", $"{category} Tag");
+            LocalizedString title = TextSOS.Get($"mte.title.{category.ToString().ToLower()}", $"{category} Tag");
             string desc = string.IsNullOrEmpty(extraDesc)
-                ? TextSOS.Get($"tagger.tag.{((Identifier)btn.UserData).Value.RemoveWhitespace()}.desc", "Categorization tag.").Value
+                ? TextSOS.Get($"mte.tag.{((Identifier)btn.UserData).Value.RemoveWhitespace()}.desc", "Categorization tag.").Value
                 : extraDesc;
 
             btn.ToolTip = RichString.Rich($"{title.SetBold().SetColor(Color.Violet)}\n‖linebreak‖\n{desc}");

@@ -3,113 +3,113 @@
 	<Override>
 		<!-- MARK: Statics -->
 
-		<tagger.title.vanilla>Etiqueta oficial do Steam Workshop</tagger.title.vanilla>
-		<tagger.title.hidden>Etiqueta oculta do Steam Workshop</tagger.title.hidden>
-		<tagger.title.preset>Etiqueta de predefinição personalizada</tagger.title.preset>
-		<tagger.title.unrecognized>Etiqueta do Steam não reconhecida. \nEtiqueta não salva na Lista Personalizada, Clique com o botão direito para salvá-la.</tagger.title.unrecognized>
-		<tagger.title.custom>Etiqueta personalizada. Clique com o botão direito para editar/excluir.</tagger.title.custom>
-		<tagger.title.newplus>Adicionar nova etiqueta personalizada</tagger.title.newplus>
+		<mte.title.vanilla>Etiqueta oficial do Steam Workshop</mte.title.vanilla>
+		<mte.title.hidden>Etiqueta oculta do Steam Workshop</mte.title.hidden>
+		<mte.title.preset>Etiqueta de predefinição personalizada</mte.title.preset>
+		<mte.title.unrecognized>Etiqueta do Steam não reconhecida. \nEtiqueta não salva na Lista Personalizada, Clique com o botão direito para salvá-la.</mte.title.unrecognized>
+		<mte.title.custom>Etiqueta personalizada. Clique com o botão direito para editar/excluir.</mte.title.custom>
+		<mte.title.newplus>Adicionar nova etiqueta personalizada</mte.title.newplus>
 		
-		<tagger.button.edit>Editar</tagger.button.edit>
-		<tagger.button.delete>Excluir</tagger.button.delete>
-		<tagger.header.edit>Editar Etiqueta</tagger.header.edit>
-		<tagger.label.name>NOME DA ETIQUETA</tagger.label.name>
-		<tagger.label.description>DESCRIÇÃO</tagger.label.description>
-		<tagger.tooltip.addnew>Clique para criar uma nova etiqueta personalizada de usuário.</tagger.tooltip.addnew>
-		<tagger.button.newplus>Novo +</tagger.button.newplus>
-		<tagger.button.savetag>Salvar Etiqueta</tagger.button.savetag>
-		<tagger.header.convert>Salvar Etiqueta na Lista Personalizada</tagger.header.convert>
+		<mte.button.edit>Editar</mte.button.edit>
+		<mte.button.delete>Excluir</mte.button.delete>
+		<mte.header.edit>Editar Etiqueta</mte.header.edit>
+		<mte.label.name>NOME DA ETIQUETA</mte.label.name>
+		<mte.label.description>DESCRIÇÃO</mte.label.description>
+		<mte.tooltip.addnew>Clique para criar uma nova etiqueta personalizada de usuário.</mte.tooltip.addnew>
+		<mte.button.newplus>Novo +</mte.button.newplus>
+		<mte.button.savetag>Salvar Etiqueta</mte.button.savetag>
+		<mte.header.convert>Salvar Etiqueta na Lista Personalizada</mte.header.convert>
 
-		<tagger.client.loaded>[Tagger] Patches aplicados.</tagger.client.loaded>
-		<tagger.client.patched>[Tagger] Já está com os patches aplicados.</tagger.client.patched>
-		<tagger.error.xmlload>[Tagger] Erro ao carregar XML: [error]</tagger.error.xmlload>
-		<tagger.error.xmlsave>[Tagger] Erro ao salvar XML: [error]</tagger.error.xmlsave>
-		<tagger.error.critical>[Tagger] Erro crítico ao aplicar patches: [error]</tagger.error.critical>
-		<tagger.error.invalidtagname>Nome de etiqueta inválido. Apenas letras, números, espaços e sublinhados são permitidos.</tagger.error.invalidtagname>
+		<mte.client.loaded>[MTE] Patches aplicados.</mte.client.loaded>
+		<mte.client.patched>[MTE] Já está com os patches aplicados.</mte.client.patched>
+		<mte.error.xmlload>[MTE] Erro ao carregar XML: [error]</mte.error.xmlload>
+		<mte.error.xmlsave>[MTE] Erro ao salvar XML: [error]</mte.error.xmlsave>
+		<mte.error.critical>[MTE] Erro crítico ao aplicar patches: [error]</mte.error.critical>
+		<mte.error.invalidtagname>Nome de etiqueta inválido. Apenas letras, números, espaços e sublinhados são permitidos.</mte.error.invalidtagname>
 
 		<!-- MARK: Vanilla Tags -->
 
 		<workshop.tag.submarine>Submarino</workshop.tag.submarine>
-		<tagger.tag.submarine.desc>As principais embarcações controláveis pelo jogador, contendo cascos, brechas, estruturas, itens e pontos de rota para navegação.</tagger.tag.submarine.desc>
+		<mte.tag.submarine.desc>As principais embarcações controláveis pelo jogador, contendo cascos, brechas, estruturas, itens e pontos de rota para navegação.</mte.tag.submarine.desc>
 
 		<workshop.tag.mission>Missão</workshop.tag.mission>
-		<tagger.tag.mission.desc>Define os objetivos da rodada, como resgate, assassinato ou caça a monstros, interagindo com tipos de locais específicos.</tagger.tag.mission.desc>
+		<mte.tag.mission.desc>Define os objetivos da rodada, como resgate, assassinato ou caça a monstros, interagindo com tipos de locais específicos.</mte.tag.mission.desc>
 
 		<workshop.tag.item>Item</workshop.tag.item>
-		<tagger.tag.item.desc>Blocos de construção fundamentais dos mods, definidos por identificadores únicos e componentes como armas, máquinas ou recipientes.</tagger.tag.item.desc>
+		<mte.tag.item.desc>Blocos de construção fundamentais dos mods, definidos por identificadores únicos e componentes como armas, máquinas ou recipientes.</mte.tag.item.desc>
 
 		<workshop.tag.itemassembly>Conjunto de itens</workshop.tag.itemassembly>
-		<tagger.tag.itemassembly.desc>Grupos serializados de itens existentes e fiação que servem como predefinições para componentes lógicos complexos ou layouts de salas modulares.</tagger.tag.itemassembly.desc>
+		<mte.tag.itemassembly.desc>Grupos serializados de itens existentes e fiação que servem como predefinições para componentes lógicos complexos ou layouts de salas modulares.</mte.tag.itemassembly.desc>
 
 		<workshop.tag.monster>Monstro</workshop.tag.monster>
-		<tagger.tag.monster.desc>Arquivos de configuração de personagens que definem a física de ragdoll das espécies, animações e comportamentos de inteligência artificial.</tagger.tag.monster.desc>
+		<mte.tag.monster.desc>Arquivos de configuração de personagens que definem a física de ragdoll das espécies, animações e comportamentos de inteligência artificial.</mte.tag.monster.desc>
 
 		<workshop.tag.language>Idioma</workshop.tag.language>
-		<tagger.tag.language.desc>Pacotes de localização que substituem o texto do jogo ou adicionam suporte para novos idiomas usando o elemento raiz infotexts.</tagger.tag.language.desc>
+		<mte.tag.language.desc>Pacotes de localização que substituem o texto do jogo ou adicionam suporte para novos idiomas usando o elemento raiz infotexts.</mte.tag.language.desc>
 
 		<workshop.tag.eventset>Conjunto de eventos</workshop.tag.eventset>
-		<tagger.tag.eventset.desc>Coleções de ocorrências aleatórias, como surgimento de monstros ou riscos ambientais, governadas pelo gerenciador de eventos do jogo.</tagger.tag.eventset.desc>
+		<mte.tag.eventset.desc>Coleções de ocorrências aleatórias, como surgimento de monstros ou riscos ambientais, governadas pelo gerenciador de eventos do jogo.</mte.tag.eventset.desc>
 
 		<workshop.tag.totalconversion>Conversão total</workshop.tag.totalconversion>
-		<tagger.tag.totalconversion.desc>Modificações agressivas que substituem o pacote principal do jogo para redefinir cargos, parâmetros de geração de mapa e sistemas fundamentais.</tagger.tag.totalconversion.desc>
+		<mte.tag.totalconversion.desc>Modificações agressivas que substituem o pacote principal do jogo para redefinir cargos, parâmetros de geração de mapa e sistemas fundamentais.</mte.tag.totalconversion.desc>
 
 		<workshop.tag.art>Arte</workshop.tag.art>
-		<tagger.tag.art.desc>Substituições visuais para recursos do jogo, incluindo novas texturas para estruturas, sprites e melhorias gráficas.</tagger.tag.art.desc>
+		<mte.tag.art.desc>Substituições visuais para recursos do jogo, incluindo novas texturas para estruturas, sprites e melhorias gráficas.</mte.tag.art.desc>
 
 		<workshop.tag.environment>Ambiente</workshop.tag.environment>
-		<tagger.tag.environment.desc>Objetos de nível procedurais, incluindo plantas submarinas, formações rochosas e aberturas hidrotermais usadas na geração de ambiente.</tagger.tag.environment.desc>
+		<mte.tag.environment.desc>Objetos de nível procedurais, incluindo plantas submarinas, formações rochosas e aberturas hidrotermais usadas na geração de ambiente.</mte.tag.environment.desc>
 
 		<!-- MARK: Vanilla Hidden Tags -->
 
 		<workshop.tag.outpost>Posto avançado</workshop.tag.outpost>
-		<tagger.tag.outpost.desc>Módulos estáticos integrados em níveis em pontos específicos, servindo como centros civis, militares ou de pesquisa.</tagger.tag.outpost.desc>
+		<mte.tag.outpost.desc>Módulos estáticos integrados em níveis em pontos específicos, servindo como centros civis, militares ou de pesquisa.</mte.tag.outpost.desc>
 
 		<workshop.tag.beaconstation>Estação de baliza</workshop.tag.beaconstation>
-		<tagger.tag.beaconstation.desc>Objetivos secundários que requerem lógica interna específica, como sonar e alimentação de energia, para serem considerados reparados.</tagger.tag.beaconstation.desc>
+		<mte.tag.beaconstation.desc>Objetivos secundários que requerem lógica interna específica, como sonar e alimentação de energia, para serem considerados reparados.</mte.tag.beaconstation.desc>
 
 		<workshop.tag.wreck>Naufrágio</workshop.tag.wreck>
-		<tagger.tag.wreck.desc>Destroços recuperáveis e navios naufragados que frequentemente abrigam perigos biológicos únicos, como infestações de Thalamus.</tagger.tag.wreck.desc>
+		<mte.tag.wreck.desc>Destroços recuperáveis e navios naufragados que frequentemente abrigam perigos biológicos únicos, como infestações de Thalamus.</mte.tag.wreck.desc>
 
 		<workshop.tag.ruin>Ruína</workshop.tag.ruin>
-		<tagger.tag.ruin.desc>Ambientes alienígenas antigos que consistem em estruturas, armadilhas e entidades distintas, como Guardiões Fractais.</tagger.tag.ruin.desc>
+		<mte.tag.ruin.desc>Ambientes alienígenas antigos que consistem em estruturas, armadilhas e entidades distintas, como Guardiões Fractais.</mte.tag.ruin.desc>
 
 		<workshop.tag.weapons>Armas</workshop.tag.weapons>
-		<tagger.tag.weapons.desc>Subcategoria de itens usada para identificar ferramentas ofensivas e armas para filtragem e integração da lógica de mercadores.</tagger.tag.weapons.desc>
+		<mte.tag.weapons.desc>Subcategoria de itens usada para identificar ferramentas ofensivas e armas para filtragem e integração da lógica de mercadores.</mte.tag.weapons.desc>
 
 		<workshop.tag.equipment>Equipamento</workshop.tag.equipment>
-		<tagger.tag.equipment.desc>Subcategoria de itens representando ferramentas vestíveis, equipamentos e trajes usados por personagens para diversas tarefas.</tagger.tag.equipment.desc>
+		<mte.tag.equipment.desc>Subcategoria de itens representando ferramentas vestíveis, equipamentos e trajes usados por personagens para diversas tarefas.</mte.tag.equipment.desc>
 
 		<workshop.tag.medical>Médico</workshop.tag.medical>
-		<tagger.tag.medical.desc>Subcategoria de itens incluindo medicamentos, produtos químicos e ferramentas de tratamento para cura e aflições.</tagger.tag.medical.desc>
+		<mte.tag.medical.desc>Subcategoria de itens incluindo medicamentos, produtos químicos e ferramentas de tratamento para cura e aflições.</mte.tag.medical.desc>
 
 		<workshop.tag.gameplaymechanics>Mecânicas de jogo</workshop.tag.gameplaymechanics>
-		<tagger.tag.gameplaymechanics.desc>Modificações que alteram o estado da simulação, incluindo física, aflições de saúde e sistemas de habilidades de personagens.</tagger.tag.gameplaymechanics.desc>
+		<mte.tag.gameplaymechanics.desc>Modificações que alteram o estado da simulação, incluindo física, aflições de saúde e sistemas de habilidades de personagens.</mte.tag.gameplaymechanics.desc>
 
 		<workshop.tag.qol>QOL</workshop.tag.qol>
-		<tagger.tag.qol.desc>Melhorias de qualidade de vida focadas na simplificação de interações ou no fornecimento de informações sem alterar as regras fundamentais.</tagger.tag.qol.desc>
+		<mte.tag.qol.desc>Melhorias de qualidade de vida focadas na simplificação de interações ou no fornecimento de informações sem alterar as regras fundamentais.</mte.tag.qol.desc>
 
 		<workshop.tag.client-side>Lado do cliente</workshop.tag.client-side>
-		<tagger.tag.client-side.desc>Modificações locais instaladas apenas na máquina do jogador, normalmente incluindo alterações visuais ou melhorias de interface.</tagger.tag.client-side.desc>
+		<mte.tag.client-side.desc>Modificações locais instaladas apenas na máquina do jogador, normalmente incluindo alterações visuais ou melhorias de interface.</mte.tag.client-side.desc>
 
 		<workshop.tag.server-side>Lado do servidor</workshop.tag.server-side>
-		<tagger.tag.server-side.desc>Modificações que alteram a lógica e afetam o comportamento do servidor, normalmente exigindo que os clientes tenham conteúdo correspondente.</tagger.tag.server-side.desc>
+		<mte.tag.server-side.desc>Modificações que alteram a lógica e afetam o comportamento do servidor, normalmente exigindo que os clientes tenham conteúdo correspondente.</mte.tag.server-side.desc>
 
 		<workshop.tag.outdated>Obsoleto</workshop.tag.outdated>
-		<tagger.tag.outdated.desc>Um indicador de manutenção sinalizando que um mod pode causar travamentos ou erros de sincronização com a versão atual do jogo.</tagger.tag.outdated.desc>
+		<mte.tag.outdated.desc>Um indicador de manutenção sinalizando que um mod pode causar travamentos ou erros de sincronização com a versão atual do jogo.</mte.tag.outdated.desc>
 
 		<workshop.tag.gamemode>Modo de jogo</workshop.tag.gamemode>
-		<tagger.tag.gamemode.desc>Modificações que alteram la estrutura fundamental de una rodada, como novos estilos de jogo ou cenários PvP.</tagger.tag.gamemode.desc>
+		<mte.tag.gamemode.desc>Modificações que alteram la estrutura fundamental de una rodada, como novos estilos de jogo ou cenários PvP.</mte.tag.gamemode.desc>
 
 		<workshop.tag.library>Biblioteca</workshop.tag.library>
-		<tagger.tag.library.desc>Recursos e frameworks fundamentais, como módulos de script ou bibliotecas de utilitários, usados por outros mods.</tagger.tag.library.desc>
+		<mte.tag.library.desc>Recursos e frameworks fundamentais, como módulos de script ou bibliotecas de utilitários, usados por outros mods.</mte.tag.library.desc>
 
 		<!-- MARK: Preset Tags -->
 
 		<workshop.tag.moddertool>Ferramenta de Modding</workshop.tag.moddertool>
-		<tagger.tag.moddertool.desc>Ferramentas e utilitários especializados projetados para ajudar modders a criar e testar conteúdo.</tagger.tag.moddertool.desc>
+		<mte.tag.moddertool.desc>Ferramentas e utilitários especializados projetados para ajudar modders a criar e testar conteúdo.</mte.tag.moddertool.desc>
 
 		<workshop.tag.misc>Diversos</workshop.tag.misc>
-		<tagger.tag.misc.desc>Conteúdo variado que não se encaixa em outras categorias específicas do Workshop.</tagger.tag.misc.desc>
+		<mte.tag.misc.desc>Conteúdo variado que não se encaixa em outras categorias específicas do Workshop.</mte.tag.misc.desc>
 		
 	</Override>
 </infotexts>

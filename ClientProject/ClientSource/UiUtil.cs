@@ -11,7 +11,7 @@ using Barotrauma;
 
 namespace MoreModTags
 {
-    abstract partial class TaggerMenu
+    abstract partial class MTEMenu
     {
         protected static RectTransform NewItemRectT(GUILayoutGroup parent, float heightScale = 1.0f)
             => new((1.0f, 0.06f * heightScale), parent.RectTransform, Anchor.CenterLeft);

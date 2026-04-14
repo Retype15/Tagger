@@ -29,13 +29,13 @@ namespace MoreModTags
 
         public void OnLoadCompleted()
         {
-            RLogger.LogDebug("[Tagger] Loaded Successfully.");
-            RLogger.LogDebug("[Tagger] Debug Mode is enabled.");
+            RLogger.LogDebug("[MTE] Loaded Successfully.");
+            RLogger.LogDebug("[MTE] Debug Mode is enabled.");
         }
 
         public void PreInitPatching()
         {
-            RLogger.LogDebug("[Tagger] Pre-Initialization phase started.");
+            RLogger.LogDebug("[MTE] Pre-Initialization phase started.");
         }
 
         public void Dispose()
@@ -43,7 +43,7 @@ namespace MoreModTags
 #if CLIENT
             DisposeClient();
 #endif
-            RLogger.LogDebug("[Tagger] Mod Unloaded.");
+            RLogger.LogDebug("[MTE] Mod Unloaded.");
             GC.SuppressFinalize(this);
         }
     }

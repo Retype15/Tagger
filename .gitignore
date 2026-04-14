@@ -404,3 +404,4 @@ FodyWeavers.xsd
 
 # Extra unnecesary files
 TAGGER*.txt
+MTE*.txt
