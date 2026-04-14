@@ -13,11 +13,11 @@ namespace MoreModTags
 {
     public partial class Plugin
     {
-        public Harmony? HarmonyInstance { get; private set; }
+        private static Harmony? HarmonyInstance;
 
-        public void InitClient()
+        public static void InitClient()
         {
-            if (HarmonyInstance == null)
+            if (HarmonyInstance == null && !Harmony.HasAnyPatches("com.tagger"))
             {
                 HarmonyInstance = new Harmony("com.tagger");
 
@@ -25,13 +25,14 @@ namespace MoreModTags
                 {
                     HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
 
-                    LuaCsLogger.LogMessage("[Tagger] Patches applied.");
+                    RLogger.Log(TextSOS.Get("tagger.client.loaded", "[Tagger] Patches applied.").Value);
                 }
                 catch (Exception e)
                 {
-                    LuaCsLogger.LogError($"[Tagger] Critical error applying patches: {e.Message}");
+                    RLogger.Error(TextSOS.Get("tagger.error.critical", "[Tagger] Critical error applying patches: [error]").Value.Replace("[error]", e.Message));
                 }
             }
+            else RLogger.Log(TextSOS.Get("tagger.client.patched", "[Tagger] Already patched.").Value);
 
         }
 

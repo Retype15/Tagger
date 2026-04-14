@@ -1,21 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Japanese" nowhitespace="false" translatedname="日本語">
 	<Override>
-		<workshop.contenttag.outpost>拠点</workshop.contenttag.outpost>
-		<workshop.contenttag.beaconstation>ビーコンステーション</workshop.contenttag.beaconstation>
-		<workshop.contenttag.wreck>難破船</workshop.contenttag.wreck>
-		<workshop.contenttag.ruin>遺跡</workshop.contenttag.ruin>
-		<workshop.contenttag.weapons>武器</workshop.contenttag.weapons>
-		<workshop.contenttag.equipment>装備</workshop.contenttag.equipment>
-		<workshop.contenttag.medical>医療</workshop.contenttag.medical>
-		<workshop.contenttag.gameplaymechanics>ゲームプレイメカニクス</workshop.contenttag.gameplaymechanics>
-		<workshop.contenttag.qol>QOL</workshop.contenttag.qol>
-		<workshop.contenttag.client-side>クライアントサイド</workshop.contenttag.client-side>
-		<workshop.contenttag.server-side>サーバーサイド</workshop.contenttag.server-side>
-		<workshop.contenttag.outdated>旧式</workshop.contenttag.outdated>
-		<workshop.contenttag.gamemode>ゲームモード</workshop.contenttag.gamemode>
-		<workshop.contenttag.library>ライブラリ</workshop.contenttag.library>
-		<workshop.contenttag.moddertool>Moddingツール</workshop.contenttag.moddertool>
-		<workshop.contenttag.misc>その他</workshop.contenttag.misc>
+		<!-- MARK: Statics -->
+
+		<tagger.title.vanilla>Steamワークショップ公式タグ</tagger.title.vanilla>
+		<tagger.title.hidden>Steamワークショップ隠しタグ</tagger.title.hidden>
+		<tagger.title.preset>カスタムプリセットタグ</tagger.title.preset>
+		<tagger.title.unrecognized>認識されない Steam タグ。 \nカスタムリストにタグが保存されていません、右クリックで保存します。</tagger.title.unrecognized>
+		<tagger.title.custom>カスタムタグ。右クリックで編集/削除。</tagger.title.custom>
+		<tagger.title.newplus>新規カスタムタグ</tagger.title.newplus>
+		
+		<tagger.button.edit>編集</tagger.button.edit>
+		<tagger.button.delete>削除</tagger.button.delete>
+		<tagger.header.edit>タグを編集</tagger.header.edit>
+		<tagger.label.name>タグ名</tagger.label.name>
+		<tagger.label.description>説明</tagger.label.description>
+		<tagger.tooltip.addnew>クリックして新しいユーザーカスタムタグを作成します。</tagger.tooltip.addnew>
+		<tagger.button.newplus>新規 +</tagger.button.newplus>
+		<tagger.button.savetag>タグを保存</tagger.button.savetag>
+		<tagger.header.convert>カスタムリストにタグを保存</tagger.header.convert>
+
+		<tagger.client.loaded>[Tagger] パッチが適用されました。</tagger.client.loaded>
+		<tagger.client.patched>[Tagger] 既にパッチが適用されています。</tagger.client.patched>
+		<tagger.error.xmlload>[Tagger] XML読み込みエラー: [error]</tagger.error.xmlload>
+		<tagger.error.xmlsave>[Tagger] XML保存エラー: [error]</tagger.error.xmlsave>
+		<tagger.error.critical>[Tagger] パッチ適用時の致命的なエラー: [error]</tagger.error.critical>
+		<tagger.error.invalidtagname>無効なタグ名です。英数字、スペース、アンダースコアのみ使用可能です。</tagger.error.invalidtagname>
+
+		<!-- MARK: Vanilla Tags -->
+
+		<workshop.tag.submarine>潜水艦</workshop.tag.submarine>
+		<tagger.tag.submarine.desc>ハル、ギャップ、構造物、アイテム、ナビゲーション用のウェイポイントを含む、プレイヤーが操作可能な主要な船舶。</tagger.tag.submarine.desc>
+
+		<workshop.tag.mission>ミッション</workshop.tag.mission>
+		<tagger.tag.mission.desc>回収、暗殺、モンスターハントなどのラウンド目標を定義し、特定のロケーションタイプと連動します。</tagger.tag.mission.desc>
+
+		<workshop.tag.item>アイテム</workshop.tag.item>
+		<tagger.tag.item.desc>Mod制作の基本ビルディングブロック。一意の識別子と、武器、機械、コンテナなどのコンポーネントで定義されます。</tagger.tag.item.desc>
+
+		<workshop.tag.itemassembly>アイテムアセンブリ</workshop.tag.itemassembly>
+		<tagger.tag.itemassembly.desc>既存のアイテムと配線のシリアライズされたグループ。複雑なロジックコンポーネントやモジュール式の部屋レイアウトのプレハブとして機能します。</tagger.tag.itemassembly.desc>
+
+		<workshop.tag.monster>モンスター</workshop.tag.monster>
+		<tagger.tag.monster.desc>種族のラグドール物理、アニメーション、人工知能の動作を定義するキャラクター設定ファイル。</tagger.tag.monster.desc>
+
+		<workshop.tag.language>言語</workshop.tag.language>
+		<tagger.tag.language.desc>infotextsルート要素を使用してゲームのテキストを上書きしたり、新しい言語のサポートを追加したりするローカライゼーションパッケージ。</tagger.tag.language.desc>
+
+		<workshop.tag.eventset>イベントセット</workshop.tag.eventset>
+		<tagger.tag.eventset.desc>ゲームのイベントマネージャーによって制御される、モンスターの出現や環境災害などのランダムな出来事のコレクション。</tagger.tag.eventset.desc>
+
+		<workshop.tag.totalconversion>トータルコンバージョン</workshop.tag.totalconversion>
+		<tagger.tag.totalconversion.desc>ゲームのコアパッケージを置き換え、ジョブ、マップ生成パラメータ、基本システムを再定義する大規模なMod。</tagger.tag.totalconversion.desc>
+
+		<workshop.tag.art>アート</workshop.tag.art>
+		<tagger.tag.art.desc>構造物の新しいテクスチャ、スプライト、グラフィックの強化など、ゲームアセットのビジュアルを上書きします。</tagger.tag.art.desc>
+
+		<workshop.tag.environment>環境</workshop.tag.environment>
+		<tagger.tag.environment.desc>環境生成で使用される海底植物、岩石、熱水噴出孔などのプロシージャルなレベルオブジェクト。</tagger.tag.environment.desc>
+
+		<!-- MARK: Vanilla Hidden Tags -->
+
+		<workshop.tag.outpost>拠点</workshop.tag.outpost>
+		<tagger.tag.outpost.desc>レベル内の特定のポイントに配置される静的なモジュール。民間、軍事、または研究の拠点として機能します。</tagger.tag.outpost.desc>
+
+		<workshop.tag.beaconstation>ビーコンステーション</workshop.tag.beaconstation>
+		<tagger.tag.beaconstation.desc>修理完了とみなされるために、ソナーや電力供給などの特定の内部ロジックを必要とするサブ目標。</tagger.tag.beaconstation.desc>
+
+		<workshop.tag.wreck>難破船</workshop.tag.wreck>
+		<tagger.tag.wreck.desc>回収可能な残骸や沈没船。タラムスの感染などのユニークな生物学的危険が含まれることが多いです。</tagger.tag.wreck.desc>
+
+		<workshop.tag.ruin>遺跡</workshop.tag.ruin>
+		<tagger.tag.ruin.desc>独特の構造物、トラップ、およびフラクタルガーディアンなどのエンティティで構成される古代のエイリアンの環境。</tagger.tag.ruin.desc>
+
+		<workshop.tag.weapons>武器</workshop.tag.weapons>
+		<tagger.tag.weapons.desc>フィルタリングや商人のロジック統合のために、攻撃的なツールや武器を識別するために使用されるアイテムのサブカテゴリ。</tagger.tag.weapons.desc>
+
+		<workshop.tag.equipment>装備</workshop.tag.equipment>
+		<tagger.tag.equipment.desc>キャラクターが様々なタスクで使用するウェアラブルなツール、ギア、スーツを表すアイテムのサブカテゴリ。</tagger.tag.equipment.desc>
+
+		<workshop.tag.medical>医療</workshop.tag.medical>
+		<tagger.tag.medical.desc>治療や状態異常の回復に使用される医薬品、化学薬品、治療器具を含むアイテムのサブカテゴリ。</tagger.tag.medical.desc>
+
+		<workshop.tag.gameplaymechanics>ゲームプレイメカニクス</workshop.tag.gameplaymechanics>
+		<tagger.tag.gameplaymechanics.desc>物理、健康状態、キャラクターのスキルシステムなどのシミュレーション状態を変更するMod。</tagger.tag.gameplaymechanics.desc>
+
+		<workshop.tag.qol>QOL</workshop.tag.qol>
+		<tagger.tag.qol.desc>基本的なルールを変更せずに、操作を簡素化したり情報を提供したりすることに重点を置いたQOLの向上。</tagger.tag.qol.desc>
+
+		<workshop.tag.client-side>クライアントサイド</workshop.tag.client-side>
+		<tagger.tag.client-side.desc>プレイヤーのローカルマシンにのみインストールされるMod。通常、ビジュアルの変更やUIの強化が含まれます。</tagger.tag.client-side.desc>
+
+		<workshop.tag.server-side>サーバーサイド</workshop.tag.server-side>
+		<tagger.tag.server-side.desc>サーバーのロジックに変更を加え、動作に影響を与えるMod。通常、クライアント側にも一致するコンテンツが必要です。</tagger.tag.server-side.desc>
+
+		<workshop.tag.outdated>旧式</workshop.tag.outdated>
+		<tagger.tag.outdated.desc>Modがゲームの現在のバージョンでクラッシュや同期エラーを引き起こす可能性があることを示すメンテナンス指標。</tagger.tag.outdated.desc>
+
+		<workshop.tag.gamemode>ゲームモード</workshop.tag.gamemode>
+		<tagger.tag.gamemode.desc>新しいプレイスタイルやPvPシナリオなど、ラウンドの基本構造を変更するMod。</tagger.tag.gamemode.desc>
+
+		<workshop.tag.library>ライブラリ</workshop.tag.library>
+		<tagger.tag.library.desc>他のModがロジックを実行するために使用する、スクリプトモジュールやユーティリティライブラリなどの基本的なリソースとフレームワーク。</tagger.tag.library.desc>
+
+		<!-- MARK: Preset Tags -->
+
+		<workshop.tag.moddertool>Moddingツール</workshop.tag.moddertool>
+		<tagger.tag.moddertool.desc>Mod制作者がコンテンツを作成およびテストするのを支援するために設計された専用のツールとユーティリティ。</tagger.tag.moddertool.desc>
+
+		<workshop.tag.misc>その他</workshop.tag.misc>
+		<tagger.tag.misc.desc>他の特定のワークショップカテゴリに当てはまらない、その他のコンテンツ。</tagger.tag.misc.desc>
+		
 	</Override>
 </infotexts>

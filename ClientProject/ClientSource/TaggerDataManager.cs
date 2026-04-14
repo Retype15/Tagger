@@ -42,7 +42,7 @@ namespace MoreModTags
             try
             {
                 var doc = XDocument.Load(DataPath);
-                foreach (var el in doc.Root?.Elements("Tag") ?? Enumerable.Empty<XElement>())
+                foreach (var el in doc.Root?.Elements("Tag") ?? [])
                 {
                     var name = el.Attribute("name")?.Value ?? el.Value;
                     var desc = el.Attribute("description")?.Value ?? "";
