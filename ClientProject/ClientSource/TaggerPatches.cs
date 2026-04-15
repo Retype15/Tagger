@@ -19,8 +19,20 @@ namespace MoreModTags
     public static partial class MTEPatches
     {
         // MARK: Steam Hidden Tags
-        public static readonly ImmutableArray<Identifier> SteamHiddenTags = [.. new[]
+        public static readonly ImmutableArray<Identifier> SteamTags = [.. new[]
         {
+            // Originals
+            "submarine",
+            "item",
+            "monster",
+            "art",
+            "mission",
+            "event set",
+            "total conversion",
+            "environment",
+            "item assembly",
+            "language",
+            // Olds
             "outpost",
             "beacon station",
             "wreck",
@@ -29,7 +41,8 @@ namespace MoreModTags
             "equipment",
             "medical",
             "gameplay mechanics",
-            "qol", "client-side",
+            "qol",
+            "client-side",
             "server-side",
             "outdated",
             "game mode",
@@ -45,8 +58,7 @@ namespace MoreModTags
 
         // MARK: Harmoy patches
 
-        [HarmonyPatch("CreateTagsList")]
-        [HarmonyPostfix]
+        [HarmonyPatch("CreateTagsList"), HarmonyPostfix]
         public static void Postfix_CreateTagsList(GUIListBox __result, bool canBeFocused)
         {
             if (__result?.Content == null) return;
@@ -56,26 +68,49 @@ namespace MoreModTags
             __result.HideChildrenOutsideFrame = true;
             __result.Content.ClampMouseRectToParent = true;
 
-            var selectedTags = __result.Content.Children
+            var vanillaSelectedRaw = __result.Content.Children
                 .Where(c => c is GUIButton { Selected: true } && c.UserData is Identifier)
                 .Select(c => (Identifier)c.UserData).ToHashSet();
 
+            var selectedTags = new HashSet<Identifier>();
+
+            foreach (var rawTag in vanillaSelectedRaw)
+            {
+                string rawStr = rawTag.Value;
+                var match = SteamTags.FirstOrDefault(t =>
+                    t.Value.Replace(" ", "").Replace("-", "").Equals(rawStr, System.StringComparison.OrdinalIgnoreCase));
+
+                if (!match.IsEmpty) selectedTags.Add(match);
+                else selectedTags.Add(rawTag);
+            }
+
+            // Clear
             __result.Content.ClearChildren();
             var processedTags = new HashSet<Identifier>();
 
-            RLogger.LogDebug($"[MTE] Building tags list. Found {SteamManager.Workshop.Tags.Length} Steam tags.");
+            RLogger.LogDebug($"[MTE] Injecting {SteamTags.Length} Steam tags.");
 
-            foreach (var tag in SteamManager.Workshop.Tags)
+            // Vanilla
+            foreach (var tag in SteamTags)
             {
-                var btn = TagBuilder.CreateButton(__result.Content, tag, TagBuilder.GetCategory(tag), canBeFocused);
+                if (processedTags.Contains(tag)) continue;
+                var btn = TagBuilder.CreateButton(__result.Content, tag, TagType.Vanilla, canBeFocused);
                 if (selectedTags.Contains(tag)) btn.Selected = true;
                 processedTags.Add(tag);
             }
 
-            RLogger.LogDebug($"[MTE] Injecting {SteamHiddenTags.Length} hidden and {ImmutableCustomTags.Length} preset tags.");
-            InjectCategory(SteamHiddenTags, TagType.Hidden);
-            InjectCategory(ImmutableCustomTags, TagType.Preset);
+            // Presets
+            RLogger.LogDebug($"[MTE] Injecting {ImmutableCustomTags.Length} preset tags.");
+            foreach (var tag in ImmutableCustomTags)
+            {
+                if (processedTags.Contains(tag)) continue;
+                if (processedTags.Contains(tag)) continue;
+                var btn = TagBuilder.CreateButton(__result.Content, tag, TagType.Preset, canBeFocused);
+                if (selectedTags.Contains(tag)) btn.Selected = true;
+                processedTags.Add(tag);
+            }
 
+            // User
             var customTags = MTEDataManager.GetCustomTags();
             RLogger.LogDebug($"[MTE] Injecting {customTags.Count} custom user tags.");
             foreach (var customTag in customTags)
@@ -92,17 +127,6 @@ namespace MoreModTags
 
             __result.UpdateScrollBarSize();
             __result.Content.RectTransform.RecalculateChildren(true);
-
-            void InjectCategory(IEnumerable<Identifier> list, TagType type)
-            {
-                foreach (var id in list)
-                {
-                    if (processedTags.Contains(id)) continue;
-                    var btn = TagBuilder.CreateButton(__result.Content, id, type, canBeFocused);
-                    if (selectedTags.Contains(id)) btn.Selected = true;
-                    processedTags.Add(id);
-                }
-            }
         }
 
         public static void ShowTagContextMenu(GUIComponent parent, GUIButton btn, Identifier id, bool isCustom)
@@ -182,10 +206,11 @@ namespace MoreModTags
                 }
 
                 var nbtn = TagBuilder.CreateButton(parent, newName, TagType.Custom, canFocus: true, newDesc);
-                nbtn.Selected = true;
 
                 var plusBtn = parent.Children.FirstOrDefault(c => c.UserData is Identifier id && id == "mte_add_btn_placeholder");
                 plusBtn?.RectTransform.SetAsLastChild();
+
+                if (parent.Parent is GUIListBox lb) lb.UpdateScrollBarSize();
 
                 RLogger.LogDebug($"[MTE] Tag list UI updated.");
                 parent.RectTransform.RecalculateChildren(true);

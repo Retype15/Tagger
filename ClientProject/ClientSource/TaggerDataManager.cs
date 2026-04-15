@@ -18,7 +18,7 @@ namespace MoreModTags
     public static class MTEDataManager
     {
         public const string DataPath = "Data/modtagsenhanced_info.xml";
-        public const string OldDataPath = "Data/Tagger_info.xml";
+        public const string OldDataPath = "Data/tagger_info.xml";
 
         private static List<CustomTag>? _cachedTags;
 
