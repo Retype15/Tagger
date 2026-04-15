@@ -18,7 +18,6 @@ namespace MoreModTags
         private static readonly Dictionary<TagType, Color> CategoryColors = new()
         {
             { TagType.Vanilla,      new Color(121, 165, 245) /* blue */         },
-            { TagType.Hidden,       new Color(141, 171, 211) /* blue-grey */    },
             { TagType.Preset,       new Color(77, 220, 163) /* green */         },
             { TagType.Custom,       new Color(209, 163, 88) /* orange */        },
             { TagType.Unrecognized, new Color(240, 87, 87) /* red */            },
@@ -27,10 +26,9 @@ namespace MoreModTags
 
         public static TagType GetCategory(Identifier id)
         {
-            if (MTEPatches.SteamHiddenTags.Contains(id)) return TagType.Hidden;
+            if (MTEPatches.SteamTags.Contains(id)) return TagType.Vanilla;
             if (MTEPatches.ImmutableCustomTags.Contains(id)) return TagType.Preset;
             if (MTEDataManager.GetCustomTags().Any(t => t.Name == id)) return TagType.Custom;
-            if (Barotrauma.Steam.SteamManager.Workshop.Tags.Contains(id)) return TagType.Vanilla;
             return TagType.Unrecognized;
         }
 

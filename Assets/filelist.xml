@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="More Mod Tags [ModderTool]" modversion="1.0.1" corepackage="False" steamworkshopid="3687767359" gameversion="1.12.6.2">
+<contentpackage name="Mod Tags Enhanced [ModderTool]" modversion="1.1.0" corepackage="False" steamworkshopid="3687767359" gameversion="1.12.6.2">
   <Text file="%ModDir%/Localization/BrazilianPortuguese.xml" />
   <Text file="%ModDir%/Localization/CastillianSpanish.xml" />
   <Text file="%ModDir%/Localization/English.xml" />
